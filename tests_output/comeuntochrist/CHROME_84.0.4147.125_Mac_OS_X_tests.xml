@@ -5,9 +5,9 @@
 
   <testsuite name="comeuntochrist.tests"
     errors="1" failures="0" hostname="" id="" package="comeuntochrist" skipped="0"
-    tests="1" time="2.677" timestamp="">
+    tests="1" time="2.032" timestamp="">
   
-    <testcase name="My first test case" classname="comeuntochrist.tests" time="2.677" assertions="1">
+    <testcase name="My first test case" classname="comeuntochrist.tests" time="2.032" assertions="1">
 
     
     <error message="Unknown api method &#34;click&#34;!" type="error"><![CDATA[
