@@ -1,8 +1,43 @@
 var driver = require('chromedriver');
+//bofmPage
+const bofmPage = require('../../pages/bofmPage');
+//contactUsPage
+const contactUsPage = require('../../pages/contactUsPage');
+//emailSignUpForm
+const emailSignUpForm = require('../../pages/emailSignUpForm')
+//familyPage
+const familyPage = require('../../pages/familyPage')
+//feedbackPage
+const feedbackPage = require('../../pages/feedbackPage')
+//forgivePage
+const forgivePage = require('../../pages/forgivePage')
+//freeBofmPage
+const freeBofmPage = require('../../pages/freeBofmPage')
+//hearHimPage
+const hearHimPage = require('../../pages/hearHimPage')
+//homePage
+const homePage = require('../../pages/homePage');
+//missionaryVisitPage
+const missionaryVisitPage = require('../../pages/missionaryVisitPage')
+//privacyNoticeFooterPage
+const privacyNoticeFooterPage = require('../../pages/privacyNoticeFooterPage')
+//popOutNav
+const popOutNav = require('../../pages/popOutNav')
+//relationWithGodPage
+const relationWithGodPage = require('../../pages/relationWithGodPage')
+//tosFooterPage
+const tosFooterPage = require('../../pages/tosFooterPage');
+//worshipWithUs
+const worshipWithUs = require('../../pages/worshipWithUsPage');
+
+
 
 module.exports = {
 
-  //Test Setup Process - still not 100% if it's setup correctly
+  //>---------------------------------------------------------------------------------------------------------------------------------------<
+  //>------------------------------------- Test Setup Process - still not 100% if it's setup correctly -------------------------------------<
+  //>---------------------------------------------------------------------------------------------------------------------------------------<
+
   before(browser, done) {
     // > this will get run only ONCE, before all the tests <
     driver.start();
@@ -20,20 +55,25 @@ module.exports = {
     console.log('Momma Likes me');
     done();
   },
+
+  //>---------------------------------------------------------------------------------------------<
+  //>------------------------------------- Start Test Cases  -------------------------------------<
+  //>---------------------------------------------------------------------------------------------<
+
   //Do the stuff and the things for clicking under Believe, Belong, Become, and Contact
   //TEST NO.1 - IS STILL BROKEN AND I HAVEN'T FIGURED OUT WHY
 
 
-  //tags: ['your', 'tags', 'go', 'here'],
-  'Test Case No.1': (browser) => {
-    // > Open the left-navigation <
+  // //tags: ['your', 'tags', 'go', 'here'],
+  // 'Test Case No.1': (browser) => {
+  //   // > Open the left-navigation <
 
-    browser
-      .waitForElementVisible('.page-header-nav_openIcon', 3000)
-      .click('.page-header-nav_openIcon')
-    //close element and reset - this to be possibly used at a later time - in sequence with the same class as the .click() that opens it
-    //.click('.page-header-nav_openIcon')
-  },
+  //   browser
+  //     .waitForElementVisible('.page-header-nav_openIcon', 3000)
+  //     .click('.page-header-nav_openIcon')
+  //   //close element and reset - this to be possibly used at a later time - in sequence with the same class as the .click() that opens it
+  //   //.click('.page-header-nav_openIcon')
+  // },
 
   'Test Case No.2': (browser) => {
     // > hamburger menu should still be open - waiting for  <
@@ -85,9 +125,21 @@ module.exports = {
       .assert.containsText('@homepage_OrangeBelieveText', 'Believe');
   },
 
+  'Test Case No.7': (browser) => {
+    let footerpage = browser.page.tosFooterpage();
+    footerpage.navigate()
+      .assert.visible('@homepage_termsOfServiceLink')
+      .assert.containsText('@homepage_termsOfServiceLink');
+  }
 
+  //>-------------------------------------------------------------------------------------------<
+  //>------------------------------------- End Test Cases  -------------------------------------<
+  //>-------------------------------------------------------------------------------------------<
 
-  //Test Teardown Process - still not 100% if it's setup correctly
+  //>------------------------------------------------------------------------------------------------------------------------------------------<
+  //>------------------------------------- Test Teardown Process - still not 100% if it's setup correctly -------------------------------------<
+  //>------------------------------------------------------------------------------------------------------------------------------------------<
+  
   afterEach(browser, done) {
     // > this will get run after every test case <
     console.log('Dadda Likes me');
