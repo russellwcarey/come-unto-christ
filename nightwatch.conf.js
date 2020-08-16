@@ -1,5 +1,6 @@
 module.exports = {
   "src_folders": ["tests"],
+  //"page_objects_path": "models",
 
   "webdriver": {
     "start_process": true,
