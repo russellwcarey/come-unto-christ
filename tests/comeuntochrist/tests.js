@@ -21,19 +21,19 @@ module.exports = {
 
   //tags: ['your', 'tags', 'go', 'here'],
 
-  // 'Test Case No.1': (browser) => {
-  //   // > this test does something here <
+  'Test Case No.1': (browser) => {
+    // > this test does something here <
 
-  //   browser
-  //     .waitForElementVisible('.page-header-nav_openIcon')
-  //     .click('.page-header-nav_openIcon')
+    browser
+      .waitForElementVisible('.page-header-nav_openIcon')
+      .click('.page-header-nav_openIcon')
 
-  //   //Do the stuff and the things for clicking under Believe, Belong, Become, and Contact
+    //Do the stuff and the things for clicking under Believe, Belong, Become, and Contact
 
 
-  //   //close element and reset - this to be possibly used at a later time - in sequence with the same class as the .click() that opens it
-  //   //.click('.page-header-nav_openIcon')
-  // },
+    //close element and reset - this to be possibly used at a later time - in sequence with the same class as the .click() that opens it
+    //.click('.page-header-nav_openIcon')
+  },
   'Test Case No.2': (browser) => {
     // > hamburger menu should still be open - waiting for  <
     browser
