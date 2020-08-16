@@ -76,6 +76,7 @@ module.exports = {
 
     // popoutBar.commands.toggleNav();
   },
+
   'Test Case No.6': (browser) => {
     let homepage = browser.page.homePage();
     homepage.navigate()

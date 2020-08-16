@@ -1,6 +1,5 @@
 module.exports = {
   url: 'https://www.comeuntochrist.org',
-  // commands: [popoutNavCommands],
   elements: {
     homepage_ChurchWordMark: {
       selector: '#English_x5F_OUTLINE_x5F_2020',
