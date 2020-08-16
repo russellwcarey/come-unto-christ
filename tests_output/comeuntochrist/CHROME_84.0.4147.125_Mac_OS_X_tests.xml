@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
-            tests="3">
+            tests="5">
 
   <testsuite name="comeuntochrist.tests"
     errors="0" failures="0" hostname="" id="" package="comeuntochrist" skipped="0"
-    tests="3" time="3.929" timestamp="">
+    tests="5" time="7.910" timestamp="">
   
-    <testcase name="Test Case No.2" classname="comeuntochrist.tests" time="2.449" assertions="2">
+    <testcase name="Test Case No.2" classname="comeuntochrist.tests" time="1.982" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Case No.3" classname="comeuntochrist.tests" time="0.5650" assertions="3">
+    <testcase name="Test Case No.3" classname="comeuntochrist.tests" time="0.6410" assertions="3">
 
     
 
@@ -23,9 +23,21 @@
     
     </testcase>
   
-    <testcase name="Test Case No.5" classname="comeuntochrist.tests" time="0.9150" assertions="3">
+    <testcase name="Test Case No.4" classname="comeuntochrist.tests" time="0.9450" assertions="3">
 
     
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test Case No.5" classname="comeuntochrist.tests" time="3.204" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Test Case No.6" classname="comeuntochrist.tests" time="1.138" assertions="2">
 
     
 

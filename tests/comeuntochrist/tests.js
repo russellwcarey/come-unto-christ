@@ -55,25 +55,34 @@ module.exports = {
       //.expect.element('.search-form_form').text.to.equal('Search')
       .assert.containsText('.search-form_form', 'Search')
   },
-  // 'Test Case No.4': (browser) => {
 
-  //   let popoutBar = browser.page.popoutNav();
-  //   popoutBar.navigate();
-  //   popoutBar.commands.toggleNav();
-  //   // let leftNav = browser.page.popoutNav();
-
-  //   // leftNav.hamburgerIcon.click();
-  //   // leftNav.believe_FollowingJesus.click();
-  // },
-  'Test Case No.5': (browser) => {
+  'Test Case No.4': (browser) => {
     browser
       .assert.urlContains('https://www.comeuntochrist.org/', 'Params: Currently on Home Page')
 
-      .assert.visible('.emphasized-media-tile_container', 'UI: Is the Element visible?')
+      .assert.visible('.emphasized-media-tile_container')
       .useXpath()
       .assert.containsText('/html/body/div[5]/div/div/div[1]/a/div[2]/div[2]/div/div/span', 'Explore All Beliefs')
       .saveScreenshot('tests_output/final.png')
   },
+
+  'Test Case No.5': (browser) => {
+
+    let popoutBar = browser.page.popoutNav();
+    popoutBar.navigate()
+      .click('@hamburgerIcon')
+      .waitForElementVisible('@believe_FollowingJesus', 3000)
+      .click('@believe_FollowingJesus');
+
+    // popoutBar.commands.toggleNav();
+  },
+  'Test Case No.6': (browser) => {
+    let homepage = browser.page.homePage();
+    homepage.navigate()
+      .assert.visible('@homepage_OrangeBelieveText')
+      .assert.containsText('@homepage_OrangeBelieveText', 'Believe');
+  },
+
 
   afterEach(browser, done) {
     // > this will get run after every test case <
