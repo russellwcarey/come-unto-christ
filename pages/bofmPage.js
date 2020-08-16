@@ -1,5 +1,5 @@
 module.exports = {
-  //is this the right starting URL?
+  // is this the right starting URL?
   // url: 'https://www.comeuntochrist.org/beliefs/book-of-mormon',
   // elements: {
   //   homepage_ChurchWordMark: {

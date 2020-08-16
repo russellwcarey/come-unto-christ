@@ -1,6 +1,8 @@
 var driver = require('chromedriver');
 
 module.exports = {
+
+  //Test Setup Process - still not 100% if it's setup correctly
   before(browser, done) {
     // > this will get run only ONCE, before all the tests <
     driver.start();
@@ -18,22 +20,21 @@ module.exports = {
     console.log('Momma Likes me');
     done();
   },
+  //Do the stuff and the things for clicking under Believe, Belong, Become, and Contact
+  //TEST NO.1 - IS STILL BROKEN AND I HAVEN'T FIGURED OUT WHY
+
 
   //tags: ['your', 'tags', 'go', 'here'],
-
   'Test Case No.1': (browser) => {
-    // > this test does something here <
+    // > Open the left-navigation <
 
     browser
-      .waitForElementVisible('.page-header-nav_openIcon')
+      .waitForElementVisible('.page-header-nav_openIcon', 3000)
       .click('.page-header-nav_openIcon')
-
-    //Do the stuff and the things for clicking under Believe, Belong, Become, and Contact
-
-
     //close element and reset - this to be possibly used at a later time - in sequence with the same class as the .click() that opens it
     //.click('.page-header-nav_openIcon')
   },
+
   'Test Case No.2': (browser) => {
     // > hamburger menu should still be open - waiting for  <
     browser
@@ -85,6 +86,8 @@ module.exports = {
   },
 
 
+
+  //Test Teardown Process - still not 100% if it's setup correctly
   afterEach(browser, done) {
     // > this will get run after every test case <
     console.log('Dadda Likes me');

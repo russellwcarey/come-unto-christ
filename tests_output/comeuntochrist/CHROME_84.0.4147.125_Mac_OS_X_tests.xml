@@ -5,28 +5,28 @@
 
   <testsuite name="comeuntochrist.tests"
     errors="1" failures="1" hostname="" id="" package="comeuntochrist" skipped="3"
-    tests="3" time="9.179" timestamp="">
+    tests="3" time="9.230" timestamp="">
   
-    <testcase name="Test Case No.1" classname="comeuntochrist.tests" time="1.910" assertions="1">
+    <testcase name="Test Case No.1" classname="comeuntochrist.tests" time="2.733" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Test Case No.2" classname="comeuntochrist.tests" time="0.8760" assertions="2">
+    <testcase name="Test Case No.2" classname="comeuntochrist.tests" time="0.1110" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="Test Case No.3" classname="comeuntochrist.tests" time="6.393" assertions="2">
+    <testcase name="Test Case No.3" classname="comeuntochrist.tests" time="6.386" assertions="2">
 
-      <failure message="Timed out while waiting for element &lt;.search-form_form&gt; to be visible for 5000 milliseconds. - expected &#34;visible&#34; but got: &#34;not visible&#34; (5195ms)">    at Object.Test Case No.3 (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/tests/comeuntochrist/tests.js:54:8)
+      <failure message="Timed out while waiting for element &lt;.search-form_form&gt; to be visible for 5000 milliseconds. - expected &#34;visible&#34; but got: &#34;not visible&#34; (5154ms)">    at Object.Test Case No.3 (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/tests/comeuntochrist/tests.js:57:8)
     at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
 
     
-    <error message="Timed out while waiting for element &lt;.search-form_form&gt; to be visible for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not visible&#34;[0m [0;90m(5195ms)[0m" type="error"><![CDATA[
-        at Object.Test Case No.3 (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/tests/comeuntochrist/tests.js:54:8)
+    <error message="Timed out while waiting for element &lt;.search-form_form&gt; to be visible for 5000 milliseconds. - expected [0;32m&#34;visible&#34;[0m but got: [0;31m&#34;not visible&#34;[0m [0;90m(5154ms)[0m" type="error"><![CDATA[
+        at Object.Test Case No.3 (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/tests/comeuntochrist/tests.js:57:8)
     at processTicksAndRejections (internal/process/task_queues.js:97:5)
     ]]></error>
     
