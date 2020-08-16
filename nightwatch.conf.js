@@ -1,6 +1,11 @@
 module.exports = {
   "src_folders": ["tests"],
-  //"page_objects_path": "models",
+  "page_objects_path": "pages",
+  "globals_path": "./globals.js",
+
+  "selenium": {
+    "start_process": false
+  },
 
   "webdriver": {
     "start_process": true,

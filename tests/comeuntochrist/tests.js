@@ -3,6 +3,7 @@ var driver = require('chromedriver');
 module.exports = {
   before(browser, done) {
     // > this will get run only ONCE, before all the tests <
+    driver.start();
 
     browser.url('https://www.comeuntochrist.org/');
     //browser.resizeWindow(1280, 800);
@@ -20,21 +21,58 @@ module.exports = {
 
   //tags: ['your', 'tags', 'go', 'here'],
 
-  'Test Case No.1': (browser) => {
-    // > this test does something here <
-    browser
-      .waitForElementVisible('.page-header-nav_openIcon')
-      .click('.page-header-nav_openIcon');
-  },
+  // 'Test Case No.1': (browser) => {
+  //   // > this test does something here <
+
+  //   browser
+  //     .waitForElementVisible('.page-header-nav_openIcon')
+  //     .click('.page-header-nav_openIcon')
+
+  //   //Do the stuff and the things for clicking under Believe, Belong, Become, and Contact
+
+
+  //   //close element and reset - this to be possibly used at a later time - in sequence with the same class as the .click() that opens it
+  //   //.click('.page-header-nav_openIcon')
+  // },
   'Test Case No.2': (browser) => {
-    // > this test does something else here <
+    // > hamburger menu should still be open - waiting for  <
     browser
-      .expect.element('.page-header-nav_link').text.to.equal('Believe')
+      // .page-header-nav_navSeparator > li:nth-child(1) > a:nth-child(1)
+      // body > header > nav > div > div:nth-child(4) > ul > li:nth-child(1) > a
+      .waitForElementVisible('body > header > nav > div > div:nth-child(4) > ul > li:nth-child(1) > a')
+      .expect.element('body > header > nav > div > div:nth-child(4) > ul > li:nth-child(1) > a').text.to.equal('Believe')
+    //.click('.page-header-nav_openIcon')
+
   },
   'Test Case No.3': (browser) => {
     // > this test does something else here <
     browser
-      .expect.element('').to.have.value.that.equals('Search')
+      // .page-header-nav_openSearch
+      // body > header > nav > div > div.page-header-nav_icons > button
+      .waitForElementVisible('.page-header-nav_openSearch')
+      .click('.page-header-nav_openSearch')
+      .waitForElementVisible('.search-form_form')
+      //.expect.element('.search-form_form').text.to.equal('Search')
+      .assert.containsText('.search-form_form', 'Search')
+  },
+  // 'Test Case No.4': (browser) => {
+
+  //   let popoutBar = browser.page.popoutNav();
+  //   popoutBar.navigate();
+  //   popoutBar.commands.toggleNav();
+  //   // let leftNav = browser.page.popoutNav();
+
+  //   // leftNav.hamburgerIcon.click();
+  //   // leftNav.believe_FollowingJesus.click();
+  // },
+  'Test Case No.5': (browser) => {
+    browser
+      .assert.urlContains('https://www.comeuntochrist.org/', 'Params: Currently on Home Page')
+
+      .assert.visible('.emphasized-media-tile_container', 'UI: Is the Element visible?')
+      .useXpath()
+      .assert.containsText('/html/body/div[5]/div/div/div[1]/a/div[2]/div[2]/div/div/span', 'Explore All Beliefs')
+      .saveScreenshot('tests_output/final.png')
   },
 
   afterEach(browser, done) {
@@ -45,6 +83,8 @@ module.exports = {
   after(browser, done) {
     // > this will get run ONCE, after all tests have run <
     browser.end();
+
+    driver.stop();
     done();
   }
 };

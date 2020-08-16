@@ -1,55 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="1"
+<testsuites errors="0"
             failures="0"
-            tests="0">
+            tests="3">
 
   <testsuite name="comeuntochrist.tests"
-    errors="1" failures="0" hostname="" id="" package="comeuntochrist" skipped="3"
-    tests="0" time="0.000" timestamp="">
+    errors="0" failures="0" hostname="" id="" package="comeuntochrist" skipped="0"
+    tests="3" time="3.929" timestamp="">
+  
+    <testcase name="Test Case No.2" classname="comeuntochrist.tests" time="2.449" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test Case No.3" classname="comeuntochrist.tests" time="0.5650" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Test Case No.5" classname="comeuntochrist.tests" time="0.9150" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
   
 
   
-    <system-err>
-        TypeError: browser.deleteCache is not a function
-   - writing an ES6 async test case? - keep in mind that commands return a Promise; 
-   - writing unit tests? - make sure to specify &#34;unit_tests_mode=true&#34; in your config.
-       at Object.before (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/tests/comeuntochrist/tests.js:11:13)
-       at new Promise (&lt;anonymous&gt;)
-    </system-err>
-  
 
     
-    <error message="browser.deleteCache is not a function"><![CDATA[
-      TypeError: browser.deleteCache is not a function
-    at Object.before (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/tests/comeuntochrist/tests.js:11:13)
-    at Context.callAsync (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/node_modules/nightwatch/lib/testsuite/context.js:395:20)
-    at Context.invokeMethod (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/node_modules/nightwatch/lib/testsuite/context.js:346:21)
-    at /Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/node_modules/nightwatch/lib/testsuite/hooks/_basehook.js:75:24
-    at new Promise (&lt;anonymous&gt;)
-    at BeforeAll.run (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/node_modules/nightwatch/lib/testsuite/hooks/_basehook.js:50:14)
-    at Runnable.__runFn (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/node_modules/nightwatch/lib/testsuite/index.js:186:35)
-    at Runnable.run (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/node_modules/nightwatch/lib/testsuite/runnable.js:123:21)
-    at TestSuite.createRunnable (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/node_modules/nightwatch/lib/testsuite/index.js:443:33)
-    at TestSuite.handleRunnable (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/node_modules/nightwatch/lib/testsuite/index.js:448:18)
-      ]]></error>  
 
-  
-    
-    <testcase
-      name="Test Case No.1" classname="comeuntochrist.tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Test Case No.2" classname="comeuntochrist.tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Test Case No.3" classname="comeuntochrist.tests">
-      <skipped />
-    </testcase>
-    
   
   </testsuite>
 </testsuites>
