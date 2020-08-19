@@ -1,36 +1,36 @@
 var driver = require('chromedriver');
-//bofmPage
-const bofmPage = require('../../pages/bofmPage');
-//contactUsPage
-const contactUsPage = require('../../pages/contactUsPage');
-//emailSignUpForm
-const emailSignUpForm = require('../../pages/emailSignUpForm')
-//familyPage
-const familyPage = require('../../pages/familyPage')
-//feedbackPage
-const feedbackPage = require('../../pages/feedbackPage')
-//forgivePage
-const forgivePage = require('../../pages/forgivePage')
-//freeBofmPage
-const freeBofmPage = require('../../pages/freeBofmPage')
-//hearHimPage
-const hearHimPage = require('../../pages/hearHimPage')
-//homePage
-const homePage = require('../../pages/homePage');
-//missionaryVisitPage
-const missionaryVisitPage = require('../../pages/missionaryVisitPage')
+// //bofmPage
+// const bofmPage = require('../../pages/bofmPage');
+// //contactUsPage
+// const contactUsPage = require('../../pages/contactUsPage');
+// //emailSignUpForm
+// const emailSignUpForm = require('../../pages/emailSignUpForm')
+// //familyPage
+// const familyPage = require('../../pages/familyPage')
+// //feedbackPage
+// const feedbackPage = require('../../pages/feedbackPage')
+// //forgivePage
+// const forgivePage = require('../../pages/forgivePage')
+// //freeBofmPage
+// const freeBofmPage = require('../../pages/freeBofmPage')
+// //hearHimPage
+// const hearHimPage = require('../../pages/hearHimPage')
+// //homePage
+// const homePage = require('../../pages/homePage');
+// //missionaryVisitPage
+// const missionaryVisitPage = require('../../pages/missionaryVisitPage')
+
 //privacyNoticeFooterPage
 const privacyNoticeFooterPage = require('../../pages/privacyNoticeFooterPage')
-//popOutNav
-const popOutNav = require('../../pages/popOutNav')
-//relationWithGodPage
-const relationWithGodPage = require('../../pages/relationWithGodPage')
-//tosFooterPage
-const tosFooterPage = require('../../pages/tosFooterPage');
-//worshipWithUs
-const worshipWithUs = require('../../pages/worshipWithUsPage');
 
-
+// //popOutNav
+// const popOutNav = require('../../pages/popOutNav')
+// //relationWithGodPage
+// const relationWithGodPage = require('../../pages/relationWithGodPage')
+// //tosFooterPage
+// const tosFooterPage = require('../../pages/tosFooterPage');
+// //worshipWithUs
+// const worshipWithUs = require('../../pages/worshipWithUsPage');
 
 module.exports = {
 
@@ -52,7 +52,6 @@ module.exports = {
   },
   beforeEach(browser, done) {
     // > this will get run before every test case <
-    console.log('Momma Likes me');
     done();
   },
 
@@ -61,46 +60,43 @@ module.exports = {
   //>---------------------------------------------------------------------------------------------<
 
   //Do the stuff and the things for clicking under Believe, Belong, Become, and Contact
-  //TEST NO.1 - IS STILL BROKEN AND I HAVEN'T FIGURED OUT WHY
-
 
   // //tags: ['your', 'tags', 'go', 'here'],
-  // 'Test Case No.1': (browser) => {
-  //   // > Open the left-navigation <
+  'Test Case No.1': (browser) => {
+    // > Open the left-navigation <
+    let homepage = browser.page.homePage();
 
-  //   browser
-  //     .waitForElementVisible('.page-header-nav_openIcon', 3000)
-  //     .click('.page-header-nav_openIcon')
-  //   //close element and reset - this to be possibly used at a later time - in sequence with the same class as the .click() that opens it
-  //   //.click('.page-header-nav_openIcon')
-  // },
+    homepage.navigate()
+      .waitForElementVisible('@homepage_ChurchWordMark', 3000)
+      .click('@homepage_ChurchWordMark');
+  },
 
   'Test Case No.2': (browser) => {
     // > hamburger menu should still be open - waiting for  <
-    browser
-      // .page-header-nav_navSeparator > li:nth-child(1) > a:nth-child(1)
-      // body > header > nav > div > div:nth-child(4) > ul > li:nth-child(1) > a
-      .waitForElementVisible('body > header > nav > div > div:nth-child(4) > ul > li:nth-child(1) > a')
-      .expect.element('body > header > nav > div > div:nth-child(4) > ul > li:nth-child(1) > a').text.to.equal('Believe')
-    //.click('.page-header-nav_openIcon')
+    let popoutBar = browser.page.popOutNav();
 
+    popoutBar.navigate()
+      .click('@hamburgerIcon')
+      .waitForElementVisible('@believe_BelieveMain')
+      .expect.element('@believe_BelieveMain').text.to.equal('Believe')
   },
+
   'Test Case No.3': (browser) => {
     // > this test does something else here <
+    let homepage = browser.page.homePage();
+
     browser
-      // .page-header-nav_openSearch
-      // body > header > nav > div > div.page-header-nav_icons > button
       .waitForElementVisible('.page-header-nav_openSearch')
       .click('.page-header-nav_openSearch')
       .waitForElementVisible('.search-form_form')
-      //.expect.element('.search-form_form').text.to.equal('Search')
       .assert.containsText('.search-form_form', 'Search')
   },
 
   'Test Case No.4': (browser) => {
+    let homepage = browser.page.homePage();
+
     browser
       .assert.urlContains('https://www.comeuntochrist.org/', 'Params: Currently on Home Page')
-
       .assert.visible('.emphasized-media-tile_container')
       .useXpath()
       .assert.containsText('/html/body/div[5]/div/div/div[1]/a/div[2]/div[2]/div/div/span', 'Explore All Beliefs')
@@ -108,29 +104,46 @@ module.exports = {
   },
 
   'Test Case No.5': (browser) => {
+    let popoutBar = browser.page.popOutNav();
 
-    let popoutBar = browser.page.popoutNav();
     popoutBar.navigate()
       .click('@hamburgerIcon')
       .waitForElementVisible('@believe_FollowingJesus', 3000)
       .click('@believe_FollowingJesus');
-
-    // popoutBar.commands.toggleNav();
   },
 
   'Test Case No.6': (browser) => {
     let homepage = browser.page.homePage();
+
     homepage.navigate()
+      .waitForElementVisible('@homepage_OrangeBelieveText', 3000)
       .assert.visible('@homepage_OrangeBelieveText')
       .assert.containsText('@homepage_OrangeBelieveText', 'Believe');
+
+    browser.page.homePage().navigate();
   },
 
   'Test Case No.7': (browser) => {
-    let footerpage = browser.page.tosFooterpage();
-    footerpage.navigate()
+    let tosfooterpage = browser.page.tosFooterPage();
+
+    tosfooterpage.navigate()
+      .waitForElementVisible('@homepage_termsOfServiceLink', 3000)
       .assert.visible('@homepage_termsOfServiceLink')
-      .assert.containsText('@homepage_termsOfServiceLink');
-  }
+      .assert.containsText('@homepage_termsOfServiceLink', 'Terms of Use (Updated 2018-09-01)');
+    //.click('@homepage_termsOfServiceLink');
+
+    browser.page.homePage().navigate();
+  },
+
+  'Test Case No.8': (browser) => {
+    let privacynotice = browser.page.privacyNoticeFooterPage();
+    privacynotice.navigate()
+      .waitForElementVisible('@homepage_privacyNoticeLink', 3000)
+      .assert.visible('@homepage_privacyNoticeLink')
+      .assert.containsText('@homepage_privacyNoticeLink', 'Privacy Notice (Updated 2018-09-01)');
+
+    browser.page.homePage().navigate();
+  },
 
   //>-------------------------------------------------------------------------------------------<
   //>------------------------------------- End Test Cases  -------------------------------------<
@@ -139,10 +152,9 @@ module.exports = {
   //>------------------------------------------------------------------------------------------------------------------------------------------<
   //>------------------------------------- Test Teardown Process - still not 100% if it's setup correctly -------------------------------------<
   //>------------------------------------------------------------------------------------------------------------------------------------------<
-  
+
   afterEach(browser, done) {
     // > this will get run after every test case <
-    console.log('Dadda Likes me');
     done();
   },
   after(browser, done) {
