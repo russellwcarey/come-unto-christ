@@ -1,36 +1,4 @@
 var driver = require('chromedriver');
-//  // bofmPage
-//  const bofmPage = require('../../pages/bofmPage');
-//  // contactUsPage
-//  const contactUsPage = require('../../pages/contactUsPage');
-//  // emailSignUpForm
-//  const emailSignUpForm = require('../../pages/emailSignUpForm')
-//  // familyPage
-//  const familyPage = require('../../pages/familyPage')
-//  // feedbackPage
-//  const feedbackPage = require('../../pages/feedbackPage')
-//  // forgivePage
-//  const forgivePage = require('../../pages/forgivePage')
-//  // freeBofmPage
-//  const freeBofmPage = require('../../pages/freeBofmPage')
-//  // hearHimPage
-//  const hearHimPage = require('../../pages/hearHimPage')
-//  // homePage
-//  const homePage = require('../../pages/homePage');
-//  // missionaryVisitPage
-//  const missionaryVisitPage = require('../../pages/missionaryVisitPage')
-
-// privacyNoticeFooterPage
-// const privacyNoticeFooterPage = require('../../pages/privacyNoticeFooterPage')
-
-//  // popOutNav
-//  const popOutNav = require('../../pages/popOutNav')
-//  // relationWithGodPage
-//  const relationWithGodPage = require('../../pages/relationWithGodPage')
-//  // tosFooterPage
-//  const tosFooterPage = require('../../pages/tosFooterPage');
-//  // worshipWithUs
-//  const worshipWithUs = require('../../pages/worshipWithUsPage');
 
 var searchPageResultsAssertDataSet = ['All are invited', 'Nearby Churches', 'This Is Church', 'Belong'];
 
@@ -66,7 +34,9 @@ module.exports = {
    * Test case numbers based on Test Plan Document. See "Comeuntochrist-Test-Plan-1-v2.docx"
    *
    */
+
   // > HOME PAGE ----------------------------------------------------------------------------------<
+
   '1. Verify left-nav pops out': (browser) => {
     // Click on the hamburger menu on the left-nav popout to open
     // Verify popout menu shows (delay 5000ms)
@@ -79,7 +49,7 @@ module.exports = {
       .click('@homepage_ChurchWordMark');
   },
 
-  '2. Verify links in lef-nav go to proper pages': (browser) => {
+  '2. Verify links in left-nav go to proper pages': (browser) => {
     // click on the hamburger menon on the left-nav popout
     // verify open (if wait needed)
     // click on first link in list
@@ -105,37 +75,47 @@ module.exports = {
 
     let homepage = browser.page.homePage();
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic1hRef')
       .click('@homepage_Pic1hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic2hRef')
       .click('@homepage_Pic2hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic3hRef')
       .click('@homepage_Pic3hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic4hRef')
       .click('@homepage_Pic4hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic5hRef')
       .click('@homepage_Pic5hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic6hRef')
       .click('@homepage_Pic6hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic7hRef')
       .click('@homepage_Pic7hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic8hRef')
       .click('@homepage_Pic8hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic9hRef')
       .click('@homepage_Pic9hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Pic10hRef')
       .click('@homepage_Pic10hRef');
   },
 
-  '4. Verify ALL Vidoes on homepage play': (browser) => {
+  '4. Verify ALL Videos on homepage play': (browser) => {
     // locate a video on the homepage
     // select the play button
     // let video play for 15 seconds
@@ -145,20 +125,33 @@ module.exports = {
     let homepage = browser.page.homePage();
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Vid1hRef', 10000)
       .click('@homepage_Vid1hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Vid2hRef', 10000)
       .click('@homepage_Vid2hRef');
 
     homepage.navigate()
+      .waitForElementVisible('@homepage_Vid3hRef', 10000)
       .click('@homepage_Vid3hRef');
   },
 
   '5. Confirm that “Inspire your inbox” sends an email to me': (browser) => {
+
     // Verify "email" text inside of box
     // Enter email information (dummy data from a different page object?)
     // click submit
     // manually check email inbox to verify
+    let homepage = browser.page.homePage();
+
+    homepage.navigate()
+      .waitForElementVisible('@homepage_InspireInbox')
+      .click('@homepage_InspireInbox')
+      .setValue('@homepage_InspireInbox', 'testdata@mailinator.com')
+      .waitForElementVisible('@homepage_InspireSubmit')
+      .click('@homepage_InspireSubmit');
+
   },
 
   '6. Verify that Floating footer links function': (browser) => {
@@ -166,6 +159,12 @@ module.exports = {
     // Click on all three links
     // verify they go to their respective url's
     // navigate back to to homePage
+
+    let homepage = browser.page.homePage();
+
+    homepage.navigate()
+      .waitForElementVisible('@homepage_Vid1hRef')
+      .click('@homepage_Vid1hRef');
   },
 
   '7. Verify Terms of Service link': (browser) => {
@@ -222,7 +221,7 @@ module.exports = {
     // Select
   },
 
-  // > BOOK OF MORMON - PAGE -------------------------------------------------------------------------<
+  // > BOOK OF MORMON - PAGE --------------------------------------------------------------------------<
 
   '13. Verify all links on Book of Mormon page': (browser) => {
     // Verify "What is the Book of Mormon?" link
@@ -339,7 +338,7 @@ module.exports = {
   },
 
   '23. Verify 3 <div> sections on RWG page': (browser) => {
-    //
+
   },
 
   '24. Play 2nd video on page': (browser) => {

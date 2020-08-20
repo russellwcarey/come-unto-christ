@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
-            tests="2">
+            failures="1"
+            tests="4">
 
   <testsuite name="comeuntochrist.tests"
-    errors="0" failures="0" hostname="" id="" package="comeuntochrist" skipped="0"
-    tests="2" time="7.475" timestamp="">
+    errors="0" failures="1" hostname="" id="" package="comeuntochrist" skipped="34"
+    tests="4" time="33.59" timestamp="">
   
-    <testcase name="Test Case No.1" classname="comeuntochrist.tests" time="5.354" assertions="1">
+    <testcase name="1. Verify left-nav pops out" classname="comeuntochrist.tests" time="2.610" assertions="1">
 
     
     </testcase>
   
-    <testcase name="Test Case No.2" classname="comeuntochrist.tests" time="2.121" assertions="2">
+    <testcase name="2. Verify links in left-nav go to proper pages" classname="comeuntochrist.tests" time="2.426" assertions="2">
 
     
+
+    
+    </testcase>
+  
+    <testcase name="3. Verify all link images on homepage go to their respective pages " classname="comeuntochrist.tests" time="22.26" assertions="10">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="4. Verify ALL Videos on homepage play" classname="comeuntochrist.tests" time="6.294" assertions="1">  <failure message="Timed out while waiting for element &lt;body &gt; div.ytp-popup.ytp-contextmenu &gt; div &gt; div &gt; div:nth-child(4) &gt; div.ytp-menuitem-label&gt; to be present for 5000 milliseconds. - expected &#34;visible&#34; but got: &#34;not found&#34; (5170ms)">    at Object.4. Verify ALL Videos on homepage play (/Users/russellcarey/Projects/DevMountain/Practice/come-unto-christ/tests/comeuntochrist/tests.js:128:8)</failure>
 
     
     </testcase>
@@ -24,6 +52,178 @@
 
     
 
+  
+    
+    <testcase
+      name="5. Confirm that “Inspire your inbox” sends an email to me" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="6. Verify that Floating footer links function" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="7. Verify Terms of Service link" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="8. Verify Privacy Notice Link" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="9. Verify Feedback Page Link" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="10. Verify Cookie Preferences link" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="11. Home Page Select Search Icon" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="12. Select Contact Us (phone icon on header/top-nav bar)" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="13. Verify all links on Book of Mormon page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="14. Play Video on BofM Page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="15. Common Questions Drop Downs" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="16. Select “Family is Forever” link in Left PopOut Navigation from home page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="17. Verify that “Explore more topics” exists on Family page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="18. Click FORWARD/NEXT on Explore more topics at bottom of Family page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="19. Play 1st video on RWG page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="20. Share video from RWG page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="21. Download video from RWG page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="22. Like video on RWG page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="23. Verify 3 &lt;div&gt; sections on RWG page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="24. Play 2nd video on page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="25. Verify &#34;Discover the Book of Mormon&#34; section is on RWG page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="26. Select &#34;Forgiveness&#34; link in left-nav popout from home page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="27. Verify text &#34;Get a free copy of the Holy Bible&#34; is on page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="28. Verify &#34;Order&#34; element/button is on page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="29. Verify &#34;Order&#34; button is Clickable" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="30. Select &#34;Worship Services&#34; link in left-nav popout" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="31. Use find a Church Near you" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="32. Use Find a Church Near You flow" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="33. Use Find a Church Near You flow (verify Toast Notification)" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="34. Locate Dropdown that says, &#34;What is it like to be a Mormon? " classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="35. Locate dropdown that says, “Why do I need organized religion?” " classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="36. “How do I become a Mormon?” " classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="37. Verify video plays all of the way through" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="38. Verify proper text on page" classname="comeuntochrist.tests">
+      <skipped />
+    </testcase>
+    
   
   </testsuite>
 </testsuites>

@@ -22,23 +22,28 @@ module.exports = {
       locateStrategy: 'css selector'
     },
     homepage_Pic2hRef: {
-      selector: 'div.emphasized-media-tiles_emt:nth-child(7) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)',
+      selector:
+        'div.emphasized-media-tiles_emt:nth-child(7) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)',
       locateStrategy: 'css selector'
     },
     homepage_Pic3hRef: {
-      selector: 'div.emphasized-media-tiles_emt:nth-child(10) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)',
+      selector:
+        'div.emphasized-media-tiles_emt:nth-child(10) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)',
       locateStrategy: 'css selector'
     },
     homepage_Pic4hRef: {
-      selector: 'div.emphasized-media-tiles_emt:nth-child(10) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > a:nth-child(1)',
+      selector:
+        'div.emphasized-media-tiles_emt:nth-child(10) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > a:nth-child(1)',
       locateStrategy: 'css selector'
     },
     homepage_Pic5hRef: {
-      selector: 'div.emphasized-media-tiles_emt:nth-child(10) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > a:nth-child(1)',
+      selector:
+        'div.emphasized-media-tiles_emt:nth-child(10) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > a:nth-child(1)',
       locateStrategy: 'css selector'
     },
     homepage_Pic6hRef: {
-      selector: 'div.emphasized-media-tiles_emt:nth-child(13) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)',
+      selector:
+        'div.emphasized-media-tiles_emt:nth-child(13) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)',
       locateStrategy: 'css selector'
     },
     homepage_Pic7hRef: {
@@ -58,15 +63,29 @@ module.exports = {
       locateStrategy: 'css selector'
     },
     homepage_Vid1hRef: {
-      selector: '#player_uid_597526880_1 > div.ytp-cued-thumbnail-overlay > button',
-      locateStrategy: 'css selector'
+      // player_uid is a dynamic value. Need to find alternate solution to find the element
+      selector: '//*[@id="player_uid_361859360_1"]/div[4]/button',
+      locateStrategy: 'xpath'
     },
     homepage_Vid2hRef: {
-      selector: '#player_uid_956057218_1 > div.ytp-cued-thumbnail-overlay > button',
-      locateStrategy: 'css selector'
+      // player_uid is a dynamic value. Need to find alternate solution to find the element
+      selector: '//*[@id="player_uid_336160613_1"]/div[4]/button',
+      //selector: '/html/body/div[1]/div/div[4]/button'
+      //ytp-large-play-button-bg
+      //$x('//path[@class="ytp-large-play-button-bg"]')
+      locateStrategy: 'xpath'
     },
     homepage_Vid3hRef: {
-      selector: '#player_uid_855783733_1 > div.ytp-cued-thumbnail-overlay > button',
+      // player_uid is a dynamic value. Need to find alternate solution to find the element
+      selector: '//*[@id="player_uid_480008982_1"]/div[4]/button',
+      locateStrategy: 'xpath'
+    },
+    homepage_InspireInbox: {
+      selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.simple-sign-up_simpleSignUp.layout_layout.layout_outer.layout_hasBg.layout_no-spacing.layout_pt-separate-1-64px.layout_pb-separate-1-64px.layout_bw-uncontrolled.layout_bw-mobile-uncontrolled > div.layout_layout.layout_inner.layout_cw-normal.layout_cw-mobile-normal > div > div.simple-sign-up_form > div > div > div.form-builder_primaryForm > form > div > div.form-builder_formInputs.undefined > div > input',
+      locateStrategy: 'css selector'
+    },
+    homepage_InspireSubmit: {
+      selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.simple-sign-up_simpleSignUp.layout_layout.layout_outer.layout_hasBg.layout_no-spacing.layout_pt-separate-1-64px.layout_pb-separate-1-64px.layout_bw-uncontrolled.layout_bw-mobile-uncontrolled > div.layout_layout.layout_inner.layout_cw-normal.layout_cw-mobile-normal > div > div.simple-sign-up_form > div > div > div.form-builder_primaryForm > form > div > div:nth-child(11) > button',
       locateStrategy: 'css selector'
     }
   }
