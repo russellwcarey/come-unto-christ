@@ -1,0 +1,361 @@
+Comeuntochrist.org - Test Plan 1 – v2
+
+# Overview:
+    To test functionality of left navigation pane, several main page elements and their respective sub-pages, to exercise the contact us page, and the form submission for contacting a missionary without submitting the data (so as to not create “fake” users in a live-production environment).
+
+#Links:
+## Left Navigation /Pop-Out Menu
+## Home Page
+    https://www.comeuntochrist.org
+## Believe / …
+    https://www.comeuntochrist.org/beliefs/book-of-mormon
+    https://www.comeuntochrist.org/beliefs/family
+    https://www.comeuntochrist.org/beliefs/god/relationship-with-god
+    https://www.comeuntochrist.org/beliefs/forgiveness
+## Belong / Worship Services
+    https://www.comeuntochrist.org/belong/church-community
+## Become / Hear Him
+    https://www.comeuntochrist.org/hearhim
+## Contact / …
+    https://www.comeuntochrist.org/contact-us
+    https://www.comeuntochrist.org/requests/free-book-of-mormon
+    https://www.comeuntochrist.org/requests/missionary-visit
+    https://www.comeuntochrist.org/worship-with-us
+    https://www.comeuntochrist.org/email-sign-up
+## What’s included:
+    Left Menu navigation to be exercised
+    Select Left navigation
+    Select section Believe / Subset of Tests
+    Select section Belong / Subset of Tests
+    Select section Become / Subset of Tests
+    Select section Contact / Subset of Tests and Forms
+    Verify Critical Images and Branding
+    Verify Copyright Text/Links navigates to proper URL’s
+    Verify Terms of Use Text/Links navigates to proper URL’s
+    Verify Privacy Notice Text/Links navigates to proper URL’s
+    Verify Feedback navigates to proper URL’s
+# Bugs
+    Tracked in Trello Board
+    https://trello.com/b/CAvlFlqk/comeuntochristorg-personal-project
+    Documentation
+    Displayed in Trello Board and GitHub repo
+    https://github.com/russellwcarey/come-unto-christ.git 
+# What is not included:
+    Will not be testing all sub-menus in Left-Nav pane
+    Smaller subset of tests for functionality
+    Automated Visual/UI testing
+    Will not exercise all functional/visual UI elements on all pages
+#	Outside of scope
+	  Unit testing
+	  Not a dev environment
+	  API testing
+	  No public API’s available on site
+	  Load Testing
+	  Environment issues
+	  Outside of scope
+# Other details:
+  	Risk analysis of Defects
+  	[Likelihood x Impact = Level of Risk]
+#   	Overall – Low# ## 
+ 
+# Test Cases
+## Home Page
+1.	Test Case – Verify Left Navigation Pops Out
+a.	Click on the hamburger menu on the left nav popout to open
+b.	Verify pop out menu shows (delay 5000ms)
+c.	Click on the hamburger menu on the left nav to close
+d.	Next Test
+
+2.	Test Case – Verify Links in Left Navigations go to proper locations
+a.	Click on the hamburger menu on the left nav popout
+b.	Verify open (if wait needed)
+c.	Click on first link in list
+d.	Press Back browser button
+e.	Wait for screen to reset
+f.	Click on the hamburger menu on the left nav popout
+g.	(Repeat, repeat, repeat, repeat, repeat, etc)
+h.	End Test
+
+3.	Test Case – Verify ALL Link images on homepage go to their respective pages
+a.	Check a link text for a URL
+b.	Click on the link
+c.	Click the back button, or reset to the homepage
+d.	Click on the next link in the list of links
+
+4.	Test Case – Verify ALL Videos on homepage play
+a.	Locate a video on the homepage
+b.	Select the play button
+c.	Let it play for 15 seconds
+d.	Select the pause button
+
+5.	Test Case – Confirm that “Inspire your inbox” sends an email to me
+a.	Verify “Email” text inside of box
+b.	Enter email information
+c.	Click submit
+d.	Manually check email inbox to verify
+
+6.	Test Case – Verify that Floating footer links function
+a.	How many links?
+i.	3 total links
+b.	Click on all three links
+c.	Verify they go to their respective URL’s
+d.	Navigate back to Home page
+
+7.	Test Case – Verify Terms of service link
+
+8.	Test Case – Verify Privacy Notice Link
+
+9.	Test Case – Verify Feedback Page
+a.	Navigate to Feedback page
+b.	Send a test feedback
+c.	Apologize for sending junk to them
+
+10.	Test Case – Verify Cookie Preferences Link
+a.	Click on link
+b.	Pop up modal will show on screen
+c.	Verify popup text: “Your Options For Cookies On This Site”
+d.	Click on (x) in top-right of modal
+
+11.	Test Case – Select Search Icon
+a.	Perform Search
+b.	Attempt several keyword searches from an array
+c.	(Possibly Outside of Scope due to dynamic content? – need to verify)
+i.	Verify Search query
+ii.	Jump to bottom of Page
+iii.	Use bottom navigation to scroll through search results
+1.	Right Navigation button to go FORWARD in results pages
+2.	Left Navigation button to go BACKWARD in results pages
+3.	Use individual numbers
+
+12.	Test Case - Select Contact Us (Phone Icon on Header/Top Navigation)
+a.	Scroll down to Find a church near you
+b.	Enter full address
+c.	Click Search button
+d.	***END TEST SUITE
+
+Book of Mormon Page
+
+13.	Test Case – verify links on page
+a.	What is the Book of Mormon?
+i.	Verify Link text
+ii.	Click Link
+iii.	Back out
+b.	Relationship to the Bible
+i.	Verify Link Text
+ii.	Click Link
+iii.	Back out
+c.	Test Case – 4 Things to Know
+i.	Verify Link Text
+ii.	Click Link
+iii.	Back out
+d.	Who Wrote It
+i.	Verify Link Text
+ii.	Click Link
+iii.	Back out
+e.	Jesus in the Book of Mormon
+i.	Verify Link Text
+ii.	Click Link
+iii.	Back out
+f.	Real People. Real Stories.
+i.	Verify Link Text
+ii.	Click Link
+iii.	Back out
+
+14.	Test Case – Play Video on BofM Page
+a.	Locate Play Button
+b.	Select Play
+c.	Select Pause
+d.	Next Element on page
+
+15.	Test Case – Common Questions Drop Downs
+a.	Select “Do Mormons believe in the Bible?”
+i.	Open Drop Down
+ii.	Verify some of the Text
+iii.	Close Drop Down
+b.	Select “Do Mormons believe in Jesus?”
+i.	Open Drop Down
+ii.	Verify some of the Text
+iii.	Close Drop Down
+c.	Select “What are church services like?”
+i.	Open Drop Down
+ii.	Verify some of the Text
+iii.	Close Drop Down
+d.	***END TEST SUITE
+
+Family
+
+16.	Test Case – Select “Family is Forever” link in Left PopOut Navigation from home page
+a.	Click link
+b.	Navigate to /beliefs/family
+c.	Click on “Raising a Strong Family”
+d.	Click Back
+e.	Click on Eternal Families
+f.	Click Back
+g.	Click on Importance of Families
+h.	Click Back
+i.	Verify that “Schedule a Visit” is on page
+j.	End Test
+17.	Test Case – Verify that “Explore more topics” exists on page
+
+18.	Test Case – Click FORWARD/NEXT on Explore more topics at bottom of RWG page 
+a.	***END TEST SUITE
+
+Relationship with God Page
+
+19.	Test Case – Play 1st video on page
+a.	Navigate to page from Home Page
+b.	Locate Element on Page
+c.	Play video
+d.	Pause Video
+
+20.	Test Case – Share video from page
+
+21.	Test Case – Download Video from page
+
+22.	Test Case – Like (Click heart) video on page
+
+23.	Test Case – Verify 3 <div> sections on page
+
+24.	Test Case – Play 2nd video on page
+
+25.	Test Case – Verify “Discover the Book of Mormon” section is on page
+a.	Don’t select anything for filling out sectione4
+
+Forgiveness
+
+26.	Test Case – Select “Forgiveness” link in Left PopOut Navigation from home page
+a.	Click on link
+b.	Navigate to /beliefs/forgiveness
+c.	Click on “Forgiving others”
+d.	Click Back
+e.	Click on “Being Forgiven”
+f.	Click Back
+g.	Click on “Forgiving Yourself”
+h.	Click Back
+i.	Verify links for the following:
+i.	“How Can I Repent and Receive Forgiveness?”
+ii.	“The Role of Jesus Christ”
+iii.	“Repentance and Forgiveness Explained in the Book of Mormon”
+iv.	“Because of Him
+
+27.	Test Case – Verify text “Get a free copy of the Holy Bible” is on page
+
+28.	Test Case – Verify “Order” element/button is on page
+
+29.	Test Case – Verify “Order” button isClickable (is this possible?)
+a.	***END TEST SUITE
+
+Belong (Worship with Us)
+
+30.	Test Case – Select “Worship Services” link in Left PopOut Navigation from home page
+a.	Click on link
+b.	Navigate to /belong/church-community
+c.	Click on “Sunday Services”
+d.	Click Back
+e.	Click on “What to Expect”
+f.	Click Back
+g.	Click on “The Sacrament”
+h.	Click Back
+i.	Click on “Four Reasons to Go”
+j.	Click Back
+k.	Click “Finding the Right Church”
+l.	Click Back
+m.	Click “Becoming a Member”
+
+31.	Test Case – (User flow) Use Find a Church Near You flow
+a.	Locate and verify text for “Come worship with us”
+b.	Verify Text input box says “Enter full address”
+c.	Enter: “3740 W Market Center Dr, Riverton, UT 84065”
+d.	Click on Find a Church Near You
+e.	Verify search results
+i.	Note:  How do I verify the search results?  Do I need Google Maps API or can I work around it?
+f.	Verify Text: “Here are some congregations near you” 
+g.	Verify numResults (how do I find them on the page?)
+h.	Select Dropdown that shows in results (is this static/dynamic?)
+i.	Wait for element visible
+j.	Click on “Get Directions” text to show a map
+k.	Browser pops out
+l.	Select new tab that just popped out
+m.	Verify the following text exists in the URL (where * = wildcard or regex, hopefully): https://www.google.com/maps/dir/*40.520441*111.976069
+n.	END TEST
+
+32.	Test Case – (User flow) Use Find a Church Near You flow
+a.	Locate and verify text for “Come worship with us”
+b.	Verify Text input box says “Enter full address”
+c.	Enter in a valid address
+d.	Force “Enter” button to be “pressed”
+e.	Verify search results
+
+33.	Test Case - (User flow) Use Find a Church Near You flow (verify Toast notification)
+a.	Move cursor into input box with “Enter full address”
+b.	Move cursor out of input box to “body” element or BG image of input box
+c.	Wait for 3000-5000ms
+d.	Verify that Toast notification shows on screen (visual QA?)
+e.	Verify text associated with Toast reads: ! “Please enter a value”
+f.	End test
+
+34.	Test Case – Locate dropdown that says, “What is it like to be a Mormon?”
+a.	Click to Open dropdown
+b.	Wait for 3000ms
+c.	Click to Close dropdown 
+35.	Test Case – Locate dropdown that says, “Why do I need organized religion?”
+a.	Click to Open dropdown
+b.	Wait for 3000ms
+c.	Click to Close dropdown 
+36.	Test Case – Locate dropdown that says, “How do I become a Mormon?”
+a.	Click to Open dropdown
+b.	Wait for 3000ms
+c.	Click to Close dropdown 
+d.	***END TEST SUITE
+
+Hear Him
+
+37.	Test Case – Verify video plays all of the way through
+a.	Select play button on video
+b.	Pause video at 73 seconds
+c.	Select play button to restart
+d.	Allow video to complete playing
+
+38.	Test Case – Verify proper text on page
+a.	Verify Section 1
+i.	Verify text: “Hear Him with your heart instead of your ears“
+ii.	Verify image present in section 1
+b.	Verify Section 2 
+i.	Verify text: “Hear Him by unplugging and slowing down“
+ii.	Verify image present in section 2
+c.	Verify Section 3
+i.	Verify text: “Hear Him in the scriptures“
+ii.	Verify image present in section 3
+d.	Verify Section 4
+i.	Verify text: “Hear Him in small and simple ways“
+ii.	Verify image present in section 4
+e.	***END TEST SUITE
+
+Contact Us (May be outside scope)
+
+39.	Test Case
+40.	Test Case
+41.	Test Case
+42.	Test Case
+
+Free Book of Mormon (May be outside scope)
+
+43.	Test Case
+44.	Test Case
+45.	Test Case
+46.	Test Case
+
+Missionary Visit (Inside Scope)
+
+47.	Test Case
+48.	Test Case
+49.	Test Case
+50.	Test Case
+
+Worship with Us (Duplicate Tests)
+
+51.	Test Case
+
+Email Sign Up (Duplicate Tests)
+
+52.	Test Case
