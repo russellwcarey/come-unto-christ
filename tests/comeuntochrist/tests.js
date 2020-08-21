@@ -1,4 +1,5 @@
 var driver = require('chromedriver');
+const homePage = require('../../pages/homePage');
 
 var searchPageResultsAssertDataSet = ['All are invited', 'Nearby Churches', 'This Is Church', 'Belong'];
 
@@ -171,18 +172,34 @@ module.exports = {
     // Locate Verify Terms of Service on page
     // Validate Text
     // Click on link
+    let homepage = browser.page.homePage();
+
+    homePage.navigate()
+      .waitForElementVisible('@homepage_termsOfServiceLink')
+      // .getText('@homepage_termsOfServiceLink', ' ')
+      .click('@homepage_termsOfServiceLink');
   },
 
   '8. Verify Privacy Notice Link': (browser) => {
     // Locate Privacy Notice on page
     // Validate Text
     // Click on link
+    let homepage = browser.page.homePage();
+
+    homePage.navigate()
+      .waitForElementVisible('@homepage_privacyNoticeLink')
+      .click('@homepage_privacyNoticeLink');
   },
 
   '9. Verify Feedback Page Link': (browser) => {
     // Locate Verify Feedback on page
     // Validate Text
     // Click on link
+    let homepage = browser.page.homePage();
+
+    homePage.navigate()
+      .waitForElementVisible('@homepage_FeedbackLink')
+      .click('@homepage_FeedbackLink');
   },
 
   '10. Verify Cookie Preferences link': (browser) => {
@@ -193,7 +210,13 @@ module.exports = {
     // Click (x) in top-right of modal (modal should close)
     // or 
     // Click on "Agree and Proceed" button (modal should close)
+    let homepage = browser.page.homePage();
+
+    homePage.navigate()
+      .waitForElementVisible('@homepage_cookiePrefs')
+      .click('@homepage_cookiePrefs');
   },
+
 
   '11. Home Page Select Search Icon': (browser) => {
     let homepage = browser.page.homePage();

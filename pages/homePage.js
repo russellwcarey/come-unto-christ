@@ -87,6 +87,26 @@ module.exports = {
     homepage_InspireSubmit: {
       selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.simple-sign-up_simpleSignUp.layout_layout.layout_outer.layout_hasBg.layout_no-spacing.layout_pt-separate-1-64px.layout_pb-separate-1-64px.layout_bw-uncontrolled.layout_bw-mobile-uncontrolled > div.layout_layout.layout_inner.layout_cw-normal.layout_cw-mobile-normal > div > div.simple-sign-up_form > div > div > div.form-builder_primaryForm > form > div > div:nth-child(11) > button',
       locateStrategy: 'css selector'
+    },
+    homepage_privacyNoticeLink: {
+      selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.footer_curbed.curbed_curbed > div.footer_links.link-list_footerLinks2 > nav > div > ul > li:nth-child(2) > a',
+      locateStrategy: 'css selector'
+    },
+    homepage_termsOfServiceLink: {
+      // html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[1]/a
+      // body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.footer_curbed.curbed_curbed > div.footer_links.link-list_footerLinks2 > nav > div > ul > li:nth-child(1) > a
+      selector: 'nav.undefined > div:nth-child(1) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)',
+      locateStrategy: 'css selector'
+    },
+    homepage_FeedbackLink: {
+      selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.footer_curbed.curbed_curbed > div.footer_links.link-list_footerLinks2 > nav > div > ul > li:nth-child(3) > a',
+      locateStrategy: 'css selector'
+    },
+    homepage_cookiePrefs: {
+      //selector is dynamically updated - finding new method for locating selector
+      selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[4]/a/a',
+      locateStrategy: 'xpath'
     }
+
   }
 }
