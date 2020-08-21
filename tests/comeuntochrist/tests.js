@@ -175,8 +175,8 @@ module.exports = {
     let homepage = browser.page.homePage();
 
     homePage.navigate()
-      .waitForElementVisible('@homepage_termsOfServiceLink')
-      // .getText('@homepage_termsOfServiceLink', ' ')
+      .waitForElementVisible('@homepage_termsOfUseLink')
+      // .getText('@homepage_termsOfUseLink', ' ')
       .click('@homepage_termsOfServiceLink');
   },
 
