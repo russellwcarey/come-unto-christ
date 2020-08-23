@@ -116,27 +116,27 @@ module.exports = {
       .click('@homepage_Pic10hRef');
   },
 
-  '4. Verify ALL Videos on homepage play': (browser) => {
-    // locate a video on the homepage
-    // select the play button
-    // let video play for 15 seconds
-    // select pause button
-    // End
+  // '4. Verify ALL Videos on homepage play': (browser) => {
+  //   // locate a video on the homepage
+  //   // select the play button
+  //   // let video play for 15 seconds
+  //   // select pause button
+  //   // End
 
-    let homepage = browser.page.homePage();
+  //   let homepage = browser.page.homePage();
 
-    homepage.navigate()
-      .waitForElementVisible('@homepage_Vid1hRef', 10000)
-      .click('@homepage_Vid1hRef');
+  //   homepage.navigate()
+  //     .waitForElementVisible('@homepage_Vid1hRef', 10000)
+  //     .click('@homepage_Vid1hRef');
 
-    homepage.navigate()
-      .waitForElementVisible('@homepage_Vid2hRef', 10000)
-      .click('@homepage_Vid2hRef');
+  //   homepage.navigate()
+  //     .waitForElementVisible('@homepage_Vid2hRef', 10000)
+  //     .click('@homepage_Vid2hRef');
 
-    homepage.navigate()
-      .waitForElementVisible('@homepage_Vid3hRef', 10000)
-      .click('@homepage_Vid3hRef');
-  },
+  //   homepage.navigate()
+  //     .waitForElementVisible('@homepage_Vid3hRef', 10000)
+  //     .click('@homepage_Vid3hRef');
+  // },
 
   '5. Confirm that “Inspire your inbox” sends an email to me': (browser) => {
 
@@ -155,18 +155,18 @@ module.exports = {
 
   },
 
-  '6. Verify that Floating footer links function': (browser) => {
-    // Verify number of links (3 total links)
-    // Click on all three links
-    // verify they go to their respective url's
-    // navigate back to to homePage
+  // '6. Verify that Floating footer links function': (browser) => {
+  //   // Verify number of links (3 total links)
+  //   // Click on all three links
+  //   // verify they go to their respective url's
+  //   // navigate back to to homePage
 
-    let homepage = browser.page.homePage();
+  //   let homepage = browser.page.homePage();
 
-    homepage.navigate()
-      .waitForElementVisible('@homepage_Vid1hRef')
-      .click('@homepage_Vid1hRef');
-  },
+  //   homepage.navigate()
+  //     .waitForElementVisible('@homepage_Vid1hRef')
+  //     .click('@homepage_Vid1hRef');
+  // },
 
   '7. Verify Terms of Service link': (browser) => {
     // Locate Verify Terms of Service on page
@@ -205,7 +205,7 @@ module.exports = {
   '10. Verify Cookie Preferences link': (browser) => {
     // Locate Privacy Notice on page
     // Validate Text
-    // Click on link
+    // Click on linkg
     // Wait for popup modal
     // Click (x) in top-right of modal (modal should close)
     // or 
@@ -214,7 +214,23 @@ module.exports = {
 
     homePage.navigate()
       .waitForElementVisible('@homepage_cookiePrefs')
-      .click('@homepage_cookiePrefs');
+      .click('@homepage_cookiePrefs')
+      .waitForElementVisible('@homepage_cookieMoreInfo')
+      .click('@homepage_cookieMoreInfo')
+      .waitForElementVisible('@homepage_requiredCookiesToggle')
+      .waitForElementVisible('@homepage_functionalCookiesToggle')
+      .waitForElementVisible('@homepage_advertisingCookiesToggle');
+
+    // https://stackoverflow.com/questions/35083946/how-to-set-value-into-textarea-attribute-using-nightwatch-js
+    document.querySelector(homePage.elements.homepage_requiredCookiesToggle.selector).setAttribute('class', 'active');
+    document.querySelector(homePage.elements.homepage_functionalCookiesToggle.selector).setAttribute('class', 'active');
+    document.querySelector(homePage.elements.homepage_advertisingCookiesToggle.selector).setAttribute('class', '');
+
+    // homePage.setValue(homePage.elements.homepage_requiredCookiesToggle.selector, 'active');
+    // homePage.setValue(homePage.elements.homepage_functionalCookiesToggle.selector, 'active');
+    // homePage.setValue(homePage.elements.homepage_advertisingCookiesToggle.selector, 'active');
+
+    homepage.pause(5000);
   },
 
 

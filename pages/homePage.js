@@ -104,9 +104,34 @@ module.exports = {
     },
     homepage_cookiePrefs: {
       //selector is dynamically updated - finding new method for locating selector
-      selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[4]/a/a',
+      selector: '//*[@id="teconsent"]',
+      //   //*[@id="icon-id03353116383688858"]
+      //  //*[@id="teconsent"]
       locateStrategy: 'xpath'
+    },
+    homepage_cookieAgreeAndProceed: {
+      selector: '/html/body/div[8]/div[1]/div/div[2]/div[2]/a[1]',
+      locateStrategy: 'xpath'
+    },
+    homepage_cookieMoreInfo: {
+      selector: '/html/body/div[8]/div[1]/div/div[2]/div[2]/a[2]',
+      locateStrategy: 'xpath'
+    },
+    homepage_cookieApproveSubmitPreferences: {
+      selector: '/html/body/div[8]/div[1]/div/div[5]/a[2]',
+      locateStrategy: 'xpath'
+    },
+    homepage_requiredCookiesToggle: {
+      selector: 'body > div:nth-child(16) > div.mainContent > div > div:nth-child(3) > div.left > div.options > div:nth-child(1)',
+      locateStrategy: 'css selector'
+    },
+    homepage_functionalCookiesToggle: {
+      selector: 'body > div:nth-child(16) > div.mainContent > div > div:nth-child(3) > div.left > div.options > div:nth-child(2)',
+      locateStrategy: 'css selector'
+    },
+    homepage_advertisingCookiesToggle: {
+      selector: 'body > div:nth-child(16) > div.mainContent > div > div:nth-child(3) > div.left > div.options > div:nth-child(3)',
+      locateStrategy: 'css selector'
     }
-
   }
 }
