@@ -1,14 +1,16 @@
 module.exports = {
-  //is this the right starting URL?
-  // url: 'https://www.comeuntochrist.org/contact-us',
-  // elements: {
-  //   homepage_ChurchWordMark: {
-  //     selector: '#English_x5F_OUTLINE_x5F_2020',
-  //     locateStrategy: 'css selector'
-  //   },
-  //   homepage_OrangeBelieveText: {
-  //     selector: 'div.color_colorYellow25:nth-child(5) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > span:nth-child(1) > svg:nth-child(1)',
-  //     locateStrategy: 'css selector'
-  //   }
-  // }
+  url: 'https://www.comeuntochrist.org/contact-us',
+  elements: {
+    contactuspage_locationInput: {
+      selector: 'input.form-builder_inputField.location-field_input.typography_formInput.form-builder_invalid',
+      locateStrategy: 'css selector'
+    },
+    contactuspage_searchButton: {
+      selector:
+        '//button[@class="button_button"]',
+      locateStrategy: 'xpath'
+    },
+    //verify address switches to this URL
+    //https://www.comeuntochrist.org/worship-with-us/nearby-churches?location=1161%20SW%206th%20Ave%2C%20Ontario%2C%20OR%2097914
+  }
 }

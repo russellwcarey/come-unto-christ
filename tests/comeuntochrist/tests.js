@@ -13,9 +13,10 @@ module.exports = {
     //  > this will get run only ONCE, before all the tests <
     driver.start();
 
-    browser.url('https:// www.comeuntochrist.org/');
-    // browser.resizeWindow(1280, 800);
-    browser.maximizeWindow();
+    browser.url('https://www.comeuntochrist.org/');
+    // browser.resizeWindow('current', 1280, 800);
+    // browser.maximizeWindow('current');
+    browser.resizeWindow(1280, 800, done);
     browser.deleteCookies();
     browser.expect.element('body').to.be.present;
 
@@ -116,6 +117,7 @@ module.exports = {
       .click('@homepage_Pic10hRef');
   },
 
+
   // '4. Verify ALL Videos on homepage play': (browser) => {
   //   // locate a video on the homepage
   //   // select the play button
@@ -147,9 +149,9 @@ module.exports = {
     let homepage = browser.page.homePage();
 
     homepage.navigate()
-      .waitForElementVisible('@homepage_InspireInbox')
-      .click('@homepage_InspireInbox')
-      .setValue('@homepage_InspireInbox', 'testdata@mailinator.com')
+      .waitForElementVisible('@homepage_InspireInboxInput')
+      .click('@homepage_InspireInboxInput')
+      .setValue('@homepage_InspireInboxInput', 'testdata@mailinator.com')
       .waitForElementVisible('@homepage_InspireSubmit')
       .click('@homepage_InspireSubmit');
 
@@ -174,10 +176,10 @@ module.exports = {
     // Click on link
     let homepage = browser.page.homePage();
 
-    homePage.navigate()
+    homepage.navigate()
       .waitForElementVisible('@homepage_termsOfUseLink')
       // .getText('@homepage_termsOfUseLink', ' ')
-      .click('@homepage_termsOfServiceLink');
+      .click('@homepage_termsOfUseLink');
   },
 
   '8. Verify Privacy Notice Link': (browser) => {
@@ -186,7 +188,7 @@ module.exports = {
     // Click on link
     let homepage = browser.page.homePage();
 
-    homePage.navigate()
+    homepage.navigate()
       .waitForElementVisible('@homepage_privacyNoticeLink')
       .click('@homepage_privacyNoticeLink');
   },
@@ -197,7 +199,7 @@ module.exports = {
     // Click on link
     let homepage = browser.page.homePage();
 
-    homePage.navigate()
+    homepage.navigate()
       .waitForElementVisible('@homepage_FeedbackLink')
       .click('@homepage_FeedbackLink');
   },
@@ -212,7 +214,7 @@ module.exports = {
     // Click on "Agree and Proceed" button (modal should close)
     let homepage = browser.page.homePage();
 
-    homePage.navigate()
+    homepage.navigate()
       .waitForElementVisible('@homepage_cookiePrefs')
       .click('@homepage_cookiePrefs')
       .waitForElementVisible('@homepage_cookieMoreInfo')
@@ -220,17 +222,6 @@ module.exports = {
       .waitForElementVisible('@homepage_requiredCookiesToggle')
       .waitForElementVisible('@homepage_functionalCookiesToggle')
       .waitForElementVisible('@homepage_advertisingCookiesToggle');
-
-    // https://stackoverflow.com/questions/35083946/how-to-set-value-into-textarea-attribute-using-nightwatch-js
-    document.querySelector(homePage.elements.homepage_requiredCookiesToggle.selector).setAttribute('class', 'active');
-    document.querySelector(homePage.elements.homepage_functionalCookiesToggle.selector).setAttribute('class', 'active');
-    document.querySelector(homePage.elements.homepage_advertisingCookiesToggle.selector).setAttribute('class', '');
-
-    // homePage.setValue(homePage.elements.homepage_requiredCookiesToggle.selector, 'active');
-    // homePage.setValue(homePage.elements.homepage_functionalCookiesToggle.selector, 'active');
-    // homePage.setValue(homePage.elements.homepage_advertisingCookiesToggle.selector, 'active');
-
-    homepage.pause(5000);
   },
 
 
@@ -257,7 +248,18 @@ module.exports = {
     // Street, City, State, Zip
     // Click Search button
     // Wait for results
-    // Select
+    //verify address switches to this URL
+    //https://www.comeuntochrist.org/worship-with-us/nearby-churches?location=1161%20SW%206th%20Ave%2C%20Ontario%2C%20OR%2097914
+    // Select one of several addresses from "Here are some congregations near you"
+    let homepage = browser.page.homePage();
+    let contactuspage = browser.page.contactUsPage();
+
+    homepage.navigate()
+      .waitForElementVisible('@homepage_contactUsIcon')
+      .click('@homepage_contactUsIcon')
+
+    contactuspage
+      .waitForElementVisible('@contactuspage_locationInput')
   },
 
   // > BOOK OF MORMON - PAGE --------------------------------------------------------------------------<

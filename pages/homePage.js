@@ -18,8 +18,8 @@ module.exports = {
       locateStrategy: 'css selector'
     },
     homepage_Pic1hRef: {
-      selector: '.emphasized-media-tile_left > a:nth-child(1)',
-      locateStrategy: 'css selector'
+      selector: '/html/body/div[5]/div/div/div[1]/a',
+      locateStrategy: 'xpath'
     },
     homepage_Pic2hRef: {
       selector:
@@ -70,9 +70,6 @@ module.exports = {
     homepage_Vid2hRef: {
       // player_uid is a dynamic value. Need to find alternate solution to find the element
       selector: '//*[@id="player_uid_336160613_1"]/div[4]/button',
-      //selector: '/html/body/div[1]/div/div[4]/button'
-      //ytp-large-play-button-bg
-      //$x('//path[@class="ytp-large-play-button-bg"]')
       locateStrategy: 'xpath'
     },
     homepage_Vid3hRef: {
@@ -80,27 +77,25 @@ module.exports = {
       selector: '//*[@id="player_uid_480008982_1"]/div[4]/button',
       locateStrategy: 'xpath'
     },
-    homepage_InspireInbox: {
-      selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.simple-sign-up_simpleSignUp.layout_layout.layout_outer.layout_hasBg.layout_no-spacing.layout_pt-separate-1-64px.layout_pb-separate-1-64px.layout_bw-uncontrolled.layout_bw-mobile-uncontrolled > div.layout_layout.layout_inner.layout_cw-normal.layout_cw-mobile-normal > div > div.simple-sign-up_form > div > div > div.form-builder_primaryForm > form > div > div.form-builder_formInputs.undefined > div > input',
-      locateStrategy: 'css selector'
+    homepage_InspireInboxInput: {
+      selector: '/html/body/div[13]/div/footer/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div/div[1]/div/input',
+      locateStrategy: 'xpath'
     },
     homepage_InspireSubmit: {
-      selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.simple-sign-up_simpleSignUp.layout_layout.layout_outer.layout_hasBg.layout_no-spacing.layout_pt-separate-1-64px.layout_pb-separate-1-64px.layout_bw-uncontrolled.layout_bw-mobile-uncontrolled > div.layout_layout.layout_inner.layout_cw-normal.layout_cw-mobile-normal > div > div.simple-sign-up_form > div > div > div.form-builder_primaryForm > form > div > div:nth-child(11) > button',
-      locateStrategy: 'css selector'
-    },
-    homepage_privacyNoticeLink: {
-      selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.footer_curbed.curbed_curbed > div.footer_links.link-list_footerLinks2 > nav > div > ul > li:nth-child(2) > a',
-      locateStrategy: 'css selector'
+      selector: '/html/body/div[13]/div/footer/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div/div[2]/button',
+      locateStrategy: 'xpath'
     },
     homepage_termsOfUseLink: {
-      // html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[1]/a
-      // body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.footer_curbed.curbed_curbed > div.footer_links.link-list_footerLinks2 > nav > div > ul > li:nth-child(1) > a
-      selector: 'nav.undefined > div:nth-child(1) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)',
-      locateStrategy: 'css selector'
+      selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[1]/a',
+      locateStrategy: 'xpath'
+    },
+    homepage_privacyNoticeLink: {
+      selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[2]/a',
+      locateStrategy: 'xpath'
     },
     homepage_FeedbackLink: {
-      selector: 'body > div.gvsg-grid_constraint.gvsg-grid_uncontrolled.spacing_no-spacing.spacing_desktop-no-spacing > div > footer > div.footer_curbed.curbed_curbed > div.footer_links.link-list_footerLinks2 > nav > div > ul > li:nth-child(3) > a',
-      locateStrategy: 'css selector'
+      selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[3]/a',
+      locateStrategy: 'xpath'
     },
     homepage_cookiePrefs: {
       //selector is dynamically updated - finding new method for locating selector
@@ -131,6 +126,10 @@ module.exports = {
     },
     homepage_advertisingCookiesToggle: {
       selector: 'body > div:nth-child(16) > div.mainContent > div > div:nth-child(3) > div.left > div.options > div:nth-child(3)',
+      locateStrategy: 'css selector'
+    },
+    homepage_contactUsIcon: {
+      selector: '.page-header-nav_headerIcon',
       locateStrategy: 'css selector'
     }
   }

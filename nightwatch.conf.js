@@ -5,7 +5,6 @@ const PKG = require("./package.json");
 const config = {
   src_folders: ["./tests"],
   page_objects_path: "./pages",
-  //globals_path: "./globals.js",
   output_folder: "./tests_output",
 
   // selenium: {
@@ -52,6 +51,11 @@ const config = {
           args: ["window-size=1366,768", "--incognito"],
         },
       },
+    },
+    firefox: {
+      desiredCapabilities: {
+        browserName: "firefox"
+      }
     },
     edge: {
       desiredCapabilities: {
