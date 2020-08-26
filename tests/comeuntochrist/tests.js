@@ -1,7 +1,8 @@
 var driver = require('chromedriver');
+const contactUsPage = require('../../pages/contactUsPage');
 const homePage = require('../../pages/homePage');
-
-var searchPageResultsAssertDataSet = ['All are invited', 'Nearby Churches', 'This Is Church', 'Belong'];
+const searchPage = require('../../pages/searchResultsPage');
+const worshipWithUsPage = require('../../pages/worshipWithUsPage');
 
 module.exports = {
 
@@ -227,19 +228,14 @@ module.exports = {
 
   '11. Home Page Select Search Icon': (browser) => {
     let homepage = browser.page.homePage();
-    let searchresults = browser.page.searchResultsPage();
+    //let searchresults = browser.page.searchResultsPage();
 
     homepage.navigate()
-      .waitForElementVisible('@homepage_SearchIcon')
-      .click('@homepage_SearchIcon')
-      .waitForElementVisible('@homepage_Searchbox')
-      .setValue('@homepage_Searchbox', 'Jesus')
-      .waitForElementVisible('@homepage_SearchboxButton')
-      .click('@homepage_SearchboxButton');
+      .searchHomePage('Jesus', '@searchresults_collection');
 
-    searchresults
-      .waitForElementVisible('@searchresults_collection')
-      .assert.visible('@searchresults_collection');
+    //searchresults
+    //  .waitForElementVisible('@searchresults_collection')
+    //  .assert.visible('@searchresults_collection');
   },
 
   '12. Select Contact Us (phone icon on header/top-nav bar)': (browser) => {
@@ -254,12 +250,10 @@ module.exports = {
     let homepage = browser.page.homePage();
     let contactuspage = browser.page.contactUsPage();
 
-    homepage.navigate()
-      .waitForElementVisible('@homepage_contactUsIcon')
-      .click('@homepage_contactUsIcon')
+    homepage.navigate().contactUsClick();
 
     contactuspage
-      .waitForElementVisible('@contactuspage_locationInput')
+      .submitAddressSearch('4102 E. Chinook St. Eagle Mountain, UT. 84005', '@worship_ResultsGetDirections');
   },
 
   // > BOOK OF MORMON - PAGE --------------------------------------------------------------------------<

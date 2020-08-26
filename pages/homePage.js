@@ -1,5 +1,31 @@
+//var homepageAsset = require('../assets/homePageAsset');
+
+var homePageNav = {
+  searchHomePage: function (destinationSearch, destinationResults) {
+
+    this
+      .waitForElementVisible('@homepage_SearchIcon')
+      .click('@homepage_SearchIcon')
+      .waitForElementVisible('@homepage_Searchbox')
+      .setValue('@homepage_Searchbox', destinationSearch)
+      .waitForElementVisible('@homepage_SearchboxButton')
+      .click('@homepage_SearchboxButton')
+      .verify.elementPresent('@searchLocation', `"${destinationResults}"`);
+
+    return this;
+  },
+  contactUsClick: function () {
+    this
+      .waitForElementVisible('@homepage_contactUsIcon')
+      .click('@homepage_contactUsIcon');
+
+    return this;
+  }
+}
+
 module.exports = {
   url: 'https://www.comeuntochrist.org',
+  commands: [homePageNav],
   elements: {
     homepage_ChurchWordMark: {
       selector: '#English_x5F_OUTLINE_x5F_2020',
@@ -14,8 +40,9 @@ module.exports = {
       locateStrategy: 'css selector'
     },
     homepage_SearchboxButton: {
-      selector: 'button.button_button:nth-child(4)',
-      locateStrategy: 'css selector'
+      selector: '//*/button[@data-type="button"][0]',
+      //$x('//*/button[@data-type="button"]')[0]
+      locateStrategy: 'xpath'
     },
     homepage_Pic1hRef: {
       selector: '/html/body/div[5]/div/div/div[1]/a',

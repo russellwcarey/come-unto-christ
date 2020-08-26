@@ -1,14 +1,46 @@
+var bookOfMormonPageNav = {
+  bookOfMormonLinks: function () {
+
+    this
+      .waitForElementVisible('@bofm_bookOfMormonLink')
+      .waitForElementVisible('@bofm_relToBibleLink')
+      .click('@bofm_relToBibleLink');
+
+    return this;
+  },
+}
+
 module.exports = {
-  // is this the right starting URL?
-  // url: 'https://www.comeuntochrist.org/beliefs/book-of-mormon',
-  // elements: {
-  //   homepage_ChurchWordMark: {
-  //     selector: '#English_x5F_OUTLINE_x5F_2020',
-  //     locateStrategy: 'css selector'
-  //   },
-  //   homepage_OrangeBelieveText: {
-  //     selector: 'div.color_colorYellow25:nth-child(5) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > span:nth-child(1) > svg:nth-child(1)',
-  //     locateStrategy: 'css selector'
-  //   }
-  // }
+  url: 'https://www.comeuntochrist.org/beliefs/book-of-mormon',
+  commands: [bookOfMormonPageNav],
+  elements: {
+    bofm_bookOfMormonLink: {
+      selector: '//img[@class="titan-image_center"][0]',
+      locateStrategy: 'xpath'
+    },
+    bofm_relToBibleLink: {
+      selector: '//img[@class="titan-image_center"][1]',
+      locateStrategy: 'xpath'
+    },
+    bofm_thingsToKnowLink: {
+      selector: '//img[@class="titan-image_center"][2]',
+      locateStrategy: 'xpath'
+    },
+    bofm_whoWroteItLink: {
+      selector: '//img[@class="titan-image_center"][3]',
+      locateStrategy: 'xpath'
+    },
+    bofm_jesusInBofMLink: {
+      selector: '//img[@class="titan-image_center"][4]',
+      locateStrategy: 'xpath'
+    },
+    bofm_realPeopleLink: {
+      selector: '//img[@class="titan-image_center"][5]',
+      locateStrategy: 'xpath'
+    },
+    bofm_Video: {
+      selector: '//img[@class="titan-image_center"][6]',
+      locateStrategy: 'xpath'
+    },
+  }
 }

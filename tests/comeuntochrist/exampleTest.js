@@ -1,13 +1,7 @@
-//var searches = [
-//  { valid: true, input: '95820', result: 'Sacramento' },
-//  { valid: true, input: 'New York', result: 'New York' },
-//  { valid: true, input: 'London', result: 'London' },
-//  { valid: true, input: '84601', result: 'Provo' },
-//  { valid: false, input: '' },
-//  { valid: false, input: 'asdfghjkjhgfdsasdfghjkjhgfds' },
-//  { valid: false, input: '2' },
-//  { valid: false, input: '!!@#$%^&*()(*&^%$#@' },
-//];
+var inputAddress = [
+    { valid: true, input: '1161 SW 6th Ave Ontario, OR 97914', result: 'Ontario' },
+    { valid: true, input: '1929 Tuscany Drive Saratoga Springs, UT 84045', result: 'Saratoga Springs' },
+];
 
 //var myArray = [
 //  { input: '95820', result: 'Sacramento' },
