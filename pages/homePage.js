@@ -1,6 +1,108 @@
 //var homepageAsset = require('../assets/homePageAsset');
 
 var homePageNav = {
+  homePagePopOutNav: function () {
+    this
+      .waitForElementVisible('@homepage_ChurchWordMark')
+      .click('@homepage_ChurchWordMark');
+
+    return this;
+  },
+  clickImage1: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic1hRef')
+      .click('@homepage_Pic1hRef');
+
+    return this;
+  },
+  clickImage2: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic2hRef')
+      .click('@homepage_Pic2hRef');
+
+    return this;
+  },
+  clickImage3: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic3hRef')
+      .click('@homepage_Pic3hRef');
+
+    return this;
+  },
+  clickImage4: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic4hRef')
+      .click('@homepage_Pic4hRef');
+
+    return this;
+  },
+  clickImage5: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic5hRef')
+      .click('@homepage_Pic5hRef');
+
+    return this;
+  },
+  clickImage6: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic6hRef')
+      .click('@homepage_Pic6hRef');
+
+    return this;
+  },
+  clickImage7: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic7hRef')
+      .click('@homepage_Pic7hRef');
+
+    return this;
+  },
+  clickImage8: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic8hRef')
+      .click('@homepage_Pic8hRef');
+
+    return this;
+  },
+  clickImage9: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic9hRef')
+      .click('@homepage_Pic9hRef');
+
+    return this;
+  },
+  clickImage10: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_Pic10hRef')
+      .click('@homepage_Pic10hRef');
+
+    return this;
+  },
+
+
+
+
+
+
+
+
+
+  // sendEmailToMe: function (emailAddress) {
+
+  //   return this;
+  // },
+
+  //11. Home Page Select Search Icon
   searchHomePage: function (destinationSearch, destinationResults) {
 
     this

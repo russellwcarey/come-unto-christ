@@ -1,15 +1,19 @@
-// const popoutNavCommands = {
-//   toggleNav() {
-//     this.waitForElementVisible('.page-header-nav_openIcon')
-//       .click('.page-header-nav_openIcon');
 
-//     return this; // Return page object for chaining
-//   }
-// };
+var popoutPageNav = {
+
+  leftNavCheck: function () {
+    this
+      .click('@hamburgerIcon')
+      .waitForElementVisible('@believe_BelieveMain')
+      .expect.element('@believe_BelieveMain').text.to.equal('Believe');
+
+    return this;
+  }
+}
 
 module.exports = {
   url: 'https://www.comeuntochrist.org',
-  // commands: [popoutNavCommands],
+  commands: [popoutPageNav],
   elements: {
     hamburgerIcon: {
       selector: '.page-header-nav_openIcon',

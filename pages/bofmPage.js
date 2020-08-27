@@ -3,8 +3,26 @@ var bookOfMormonPageNav = {
 
     this
       .waitForElementVisible('@bofm_bookOfMormonLink')
+      .click('@bofm_bookOfMormonLink')
+      .navigate()
       .waitForElementVisible('@bofm_relToBibleLink')
-      .click('@bofm_relToBibleLink');
+      .click('@bofm_relToBibleLink')
+      .navigate()
+      .waitForElementVisible('@bofm_thingsToKnowLink')
+      .click('@bofm_thingsToKnowLink')
+      .navigate()
+      .waitForElementVisible('@bofm_whoWroteItLink')
+      .click('@bofm_whoWroteItLink')
+      .navigate()
+      .waitForElementVisible('@bofm_jesusInBofMLink')
+      .click('@bofm_jesusInBofMLink')
+      .navigate()
+      .waitForElementVisible('@bofm_realPeopleLink')
+      .click('@bofm_realPeopleLink')
+      .navigate()
+      .waitForElementVisible('@bofm_Video')
+      .click('@bofm_Video')
+      .navigate();
 
     return this;
   },
@@ -38,6 +56,7 @@ module.exports = {
       selector: '//img[@class="titan-image_center"][5]',
       locateStrategy: 'xpath'
     },
+    //this is going to require an iframe
     bofm_Video: {
       selector: '//img[@class="titan-image_center"][6]',
       locateStrategy: 'xpath'
