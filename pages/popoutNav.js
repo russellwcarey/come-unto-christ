@@ -5,9 +5,34 @@ var popoutPageNav = {
     this
       .click('@hamburgerIcon')
       .waitForElementVisible('@believe_BelieveMain')
-      .expect.element('@believe_BelieveMain').text.to.equal('Believe');
-
-    return this;
+      .expect.element('@believe_BelieveMain').text.to.equal('Believe')
+      .expect.element('@believe_FollowingJesus').text.to.equal('Following Jesus')
+      .expect.element('@believe_TheBookofMormon').text.to.equal('The Book of Mormon')
+      .expect.element('@believe_TheBible').text.to.equal('The Bible')
+      .expect.element('@believe_FamilyIsForever').text.to.equal('Family is Forever')
+      .expect.element('@believe_PurposeOfLife').text.to.equal('Purpose of Life')
+      .expect.element('@believe_ComingCloser').text.to.equal('Coming Closer to God')
+      .expect.element('@believe_JesusChristChurch').text.to.equal('Jesus Christ\'s Church')
+      .expect.element('@believe_Forgiveness').text.to.equal('Forgiveness')
+      .expect.element('@believe_LifeAfterDeath').text.to.equal('Life After Death')
+      .expect.element('@believe_Baptism').text.to.equal('Baptism')
+      .expect.element('@believe_Temples').text.to.equal('Temples')
+      .expect.element('@believe_HealthyLiving').text.to.equal('Healthy Living')
+      .expect.element('@belong_BelongMain').text.to.equal('Belong')
+      .expect.element('@belong_WorshipServices').text.to.equal('Worship Services')
+      .expect.element('@belong_PeopleAndPrograms').text.to.equal('People and Programs')
+      .expect.element('@belong_Missionaries').text.to.equal('Missionaries')
+      .expect.element('@become_BecomeMain').text.to.equal('Become')
+      .expect.element('@become_ThisIsChurch').text.to.equal('This is Church')
+      .expect.element('@become_LightTheWorld').text.to.equal('Light the World')
+      .expect.element('@become_HearHim').text.to.equal('Hear Him')
+      .expect.element('@become_BecauseOfHim').text.to.equal('Because of Him')
+      .expect.element('@contact_ContactMain').text.to.equal('Contact')
+      .expect.element('@contact_FreeBofM').text.to.equal('Free Book of Mormon')
+      .expect.element('@contact_MeetTheMish').text.to.equal('Meet with Missionaries')
+      .expect.element('@contact_FindAChurch').text.to.equal('Find a Church')
+      .expect.element('@contact_Email').text.to.equal('Email');
+    return this
   }
 }
 
