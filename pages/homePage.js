@@ -293,7 +293,7 @@ module.exports = {
     homepage_cookiePrefs: {
       //selector is dynamically updated - finding new method for locating selector
       // //*[@id="icon-id0019024381176045657"] <-- dumb auto gen link ids
-      selector: '//*/a["undefinednull"][124]',
+      selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[4]/a/a',
       //   //*[@id="icon-id03353116383688858"]
       //  //*[@id="teconsent"]
       locateStrategy: 'xpath'
