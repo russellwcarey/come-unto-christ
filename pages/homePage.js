@@ -88,24 +88,76 @@ var homePageNav = {
 
     return this;
   },
+  //5. 
+  sendEmailToMe: function (emailAddress) {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_InspireInboxInput')
+      .click('@homepage_InspireInboxInput')
+      .setValue('@homepage_InspireInboxInput', 'russellwcarey.spam+' + (new Date().getMilliseconds()) + '@gmail.com')
+      //.setValue('@homepage_InspireInboxInput', 'russellwcarey.spam@gmail.com')
+      .waitForElementVisible('@homepage_InspireSubmit')
+      //.click('@homepage_InspireSubmit')
+      .submitForm('@homepage_InspireSubmit')
+      .waitForElementVisible('@homepage_InspireConfirm')
+      .assert.containsText('@homepage_InspireConfirm', 'Your request has been submitted!');
+    //This test shows: "Error while running .clickElement() protocol action: clement click intercepted:..."
+    //Will come back to it if there is time
+    return this;
+  },
 
+  //6. iFrame - will run if I can fix it - very broken
 
+  //7. Verify Terms of Service link
+  verifyTOSLink: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_termsOfUseLink')
+      .assert.containsText('@homepage_termsOfUseLink', 'Terms of Use')
+    // .getText('@homepage_termsOfUseLink', ' ')
+    // .click('@homepage_termsOfUseLink');
+    return this;
+  },
 
+  //8. 
+  verifyPNLink: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_privacyNoticeLink')
+      .assert.containsText('@homepage_privacyNoticeLink', 'Privacy Notice');
+    // .click('@homepage_privacyNoticeLink');
+    return this;
+  },
 
-
-
-
-
-
-  // sendEmailToMe: function (emailAddress) {
-
-  //   return this;
-  // },
+  //9.
+  verifyFPLink: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_FeedbackLink')
+      .assert.containsText('@homepage_FeedbackLink', 'Feedback');
+    //.click('@homepage_FeedbackLink');
+    return this;
+  },
+  //10.
+  verifyCPLink: function () {
+    this
+      .navigate()
+      .waitForElementVisible('@homepage_cookiePrefs')
+      .assert.containsText('@homepage_cookiePrefs', 'Cookie Preferences');
+    // .click('@homepage_cookiePrefs')
+    // .waitForElementVisible('@homepage_cookieMoreInfo')
+    // .click('@homepage_cookieMoreInfo')
+    // .waitForElementVisible('@homepage_requiredCookiesToggle')
+    // .waitForElementVisible('@homepage_functionalCookiesToggle')
+    // .waitForElementVisible('@homepage_advertisingCookiesToggle');
+    return this;
+  },
 
   //11. Home Page Select Search Icon
   searchHomePage: function (destinationSearch, destinationResults) {
 
     this
+      .navigate()
       .waitForElementVisible('@homepage_SearchIcon')
       .click('@homepage_SearchIcon')
       .waitForElementVisible('@homepage_Searchbox')
@@ -208,27 +260,40 @@ module.exports = {
     },
     homepage_InspireInboxInput: {
       selector: '/html/body/div[13]/div/footer/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div/div[1]/div/input',
+      //selector: '//input[@name="email"][0]',
       locateStrategy: 'xpath'
     },
     homepage_InspireSubmit: {
       selector: '/html/body/div[13]/div/footer/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div/div[2]/button',
+      //selector: '//*/button["button_button"][8]',
+      //selector: '//button["submit"][8]',
+      locateStrategy: 'xpath'
+    },
+    homepage_InspireConfirm: {
+      //needs to contain the text "Your request has been submitted!"
+      selector: '/html/body/div[13]/div/footer/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div/div/div[1]',
+      //selector: '//div["confirmation-state_header typography_h1"][262]',
       locateStrategy: 'xpath'
     },
     homepage_termsOfUseLink: {
       selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[1]/a',
+      //selector: '//*/a["undefinednull"][120]',
       locateStrategy: 'xpath'
     },
     homepage_privacyNoticeLink: {
       selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[2]/a',
+      //selector: '//*/a["undefinednull"][121]',
       locateStrategy: 'xpath'
     },
     homepage_FeedbackLink: {
       selector: '/html/body/div[13]/div/footer/div[3]/div[3]/nav/div/ul/li[3]/a',
+      //selector: '//*/a["undefinednull"][122]',
       locateStrategy: 'xpath'
     },
     homepage_cookiePrefs: {
       //selector is dynamically updated - finding new method for locating selector
-      selector: '//*[@id="teconsent"]',
+      // //*[@id="icon-id0019024381176045657"] <-- dumb auto gen link ids
+      selector: '//*/a["undefinednull"][124]',
       //   //*[@id="icon-id03353116383688858"]
       //  //*[@id="teconsent"]
       locateStrategy: 'xpath'

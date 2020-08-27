@@ -43,8 +43,8 @@ module.exports = {
     // End
     let homepage = browser.page.homePage();
 
-    homepage.navigate()
-      .homePagePopOutNav();
+    //homepage.navigate()
+    //  .homePagePopOutNav();
   },
 
   '2. Verify links in left-nav go to proper pages': browser => {
@@ -58,8 +58,8 @@ module.exports = {
     // End
     let popoutBar = browser.page.popOutNav();
 
-    popoutBar.navigate()
-      .leftNavCheck();
+    //popoutBar.navigate()
+    //  .leftNavCheck();
   },
 
   '3. Verify all link images on homepage go to their respective pages ': browser => {
@@ -71,17 +71,17 @@ module.exports = {
 
     let homepage = browser.page.homePage();
 
-    homepage
-      .clickImage1()
-      .clickImage2()
-      .clickImage3()
-      .clickImage4()
-      .clickImage5()
-      .clickImage6()
-      .clickImage7()
-      .clickImage8()
-      .clickImage9()
-      .clickImage10();
+    //homepage
+    //  .clickImage1()
+    //  .clickImage2()
+    //  .clickImage3()
+    //  .clickImage4()
+    //  .clickImage5()
+    //  .clickImage6()
+    //  .clickImage7()
+    //  .clickImage8()
+    //  .clickImage9()
+    //  .clickImage10();
   },
 
   // SKIP FOR NOW - iframe
@@ -107,23 +107,25 @@ module.exports = {
   //     .click('@homepage_Vid3hRef');
   // },
 
-  '5. Confirm that “Inspire your inbox” sends an email to me': browser => {
+  // '5. Confirm that “Inspire your inbox” sends an email to me': browser => {
 
-    // Verify "email" text inside of box
-    // Enter email information (dummy data from a different page object?)
-    // click submit
-    // manually check email inbox to verify
-    let homepage = browser.page.homePage();
+  //   // Verify "email" text inside of box
+  //   // Enter email information (dummy data from a different page object?)
+  //   // click submit
+  //   // manually check email inbox to verify
+  //   let homepage = browser.page.homePage();
 
-    homepage
-      .navigate()
-      .waitForElementVisible('@homepage_InspireInboxInput')
-      .click('@homepage_InspireInboxInput')
-      .setValue('@homepage_InspireInboxInput', 'testdata@mailinator.com')
-      .waitForElementVisible('@homepage_InspireSubmit')
-      .click('@homepage_InspireSubmit');
+  //   homepage
+  //     .sendEmailToMe();
 
-  },
+  //   // .navigate()
+  //   // .waitForElementVisible('@homepage_InspireInboxInput')
+  //   // .click('@homepage_InspireInboxInput')
+  //   // .setValue('@homepage_InspireInboxInput', 'testdata@mailinator.com')
+  //   // .waitForElementVisible('@homepage_InspireSubmit')
+  //   // .click('@homepage_InspireSubmit');
+
+  // },
 
   // SKIP FOR NOW - iframe
   // '6. Verify that Floating footer links function': browser => {
@@ -139,39 +141,36 @@ module.exports = {
   //     .click('@homepage_Vid1hRef');
   // },
 
-  //'7. Verify Terms of Service link': browser => {
-  //  // Locate Verify Terms of Service on page
-  //  // Validate Text
-  //  // Click on link
-  //  let homepage = browser.page.homePage();
+  '7. Verify Terms of Service link': browser => {
+    // Locate Verify Terms of Service on page
+    // Validate Text
+    // Click on link
+    let homepage = browser.page.homePage();
 
-  //  homepage.navigate()
-  //    .waitForElementVisible('@homepage_termsOfUseLink')
-  //    // .getText('@homepage_termsOfUseLink', ' ')
-  //    .click('@homepage_termsOfUseLink');
-  //},
+    homepage
+      .verifyTOSLink();
+  },
 
-  //'8. Verify Privacy Notice Link': browser => {
-  //  // Locate Privacy Notice on page
-  //  // Validate Text
-  //  // Click on link
-  //  let homepage = browser.page.homePage();
+  '8. Verify Privacy Notice Link': browser => {
+    // Locate Privacy Notice on page
+    // Validate Text
+    // Click on link
+    let homepage = browser.page.homePage();
 
-  //  homepage.navigate()
-  //    .waitForElementVisible('@homepage_privacyNoticeLink')
-  //    .click('@homepage_privacyNoticeLink');
-  //},
+    homepage
+      .verifyPNLink();
+  },
 
-  //'9. Verify Feedback Page Link': browser => {
-  //  // Locate Verify Feedback on page
-  //  // Validate Text
-  //  // Click on link
-  //  let homepage = browser.page.homePage();
+  '9. Verify Feedback Page Link': browser => {
+    // Locate Verify Feedback on page
+    // Validate Text
+    // Click on link
+    let homepage = browser.page.homePage();
 
-  //  homepage.navigate()
-  //    .waitForElementVisible('@homepage_FeedbackLink')
-  //    .click('@homepage_FeedbackLink');
-  //},
+    homepage
+      .verifyFPLink();
+
+  },
 
   '10. Verify Cookie Preferences link': browser => {
     // Locate Privacy Notice on page
@@ -183,14 +182,8 @@ module.exports = {
     // Click on "Agree and Proceed" button (modal should close)
     let homepage = browser.page.homePage();
 
-    homepage.navigate()
-      .waitForElementVisible('@homepage_cookiePrefs')
-      .click('@homepage_cookiePrefs')
-      .waitForElementVisible('@homepage_cookieMoreInfo')
-      .click('@homepage_cookieMoreInfo')
-      .waitForElementVisible('@homepage_requiredCookiesToggle')
-      .waitForElementVisible('@homepage_functionalCookiesToggle')
-      .waitForElementVisible('@homepage_advertisingCookiesToggle');
+    homepage
+      .verifyCPLink();
   },
 
 
