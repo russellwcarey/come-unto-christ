@@ -89,7 +89,7 @@ var homePageNav = {
     return this;
   },
   //5. 
-  sendEmailToMe: function (emailAddress) {
+  sendEmailToMe: function () {
     this
       .navigate()
       .waitForElementVisible('@homepage_InspireInboxInput')
@@ -97,12 +97,15 @@ var homePageNav = {
       .setValue('@homepage_InspireInboxInput', 'russellwcarey.spam+' + (new Date().getMilliseconds()) + '@gmail.com')
       //.setValue('@homepage_InspireInboxInput', 'russellwcarey.spam@gmail.com')
       .waitForElementVisible('@homepage_InspireSubmit')
-      //.click('@homepage_InspireSubmit')
-      .submitForm('@homepage_InspireSubmit')
+      // ToDo: Determine why click event is failing
+      .click('@homepage_InspireSubmit')
+      //.submitForm('@homepage_InspireSubmit')
       .waitForElementVisible('@homepage_InspireConfirm')
       .assert.containsText('@homepage_InspireConfirm', 'Your request has been submitted!');
+
     //This test shows: "Error while running .clickElement() protocol action: clement click intercepted:..."
     //Will come back to it if there is time
+
     return this;
   },
 
@@ -164,7 +167,8 @@ var homePageNav = {
       .setValue('@homepage_Searchbox', destinationSearch)
       .waitForElementVisible('@homepage_SearchboxButton')
       .click('@homepage_SearchboxButton')
-      .verify.elementPresent('@searchLocation', `"${destinationResults}"`);
+      //.verify.elementPresent('@searchLocation', `"${destinationResults}"`);
+      ;
 
     return this;
   },

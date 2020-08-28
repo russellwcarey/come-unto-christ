@@ -37,25 +37,13 @@ module.exports = {
   // > HOME PAGE ----------------------------------------------------------------------------------<
 
   '1. Verify left-nav pops out': browser => {
-    // Click on the hamburger menu on the left-nav popout to open
-    // Verify popout menu shows (delay 5000ms)
-    // Click on the hamburger menu on left-nav to close menu
-    // End
     let homepage = browser.page.homePage();
 
-    // homepage.navigate()
-    //   .homePagePopOutNav();
+    homepage.navigate()
+      .homePagePopOutNav();
   },
 
   '2. Verify links in left-nav go to proper pages': browser => {
-    // click on the hamburger menon on the left-nav popout
-    // verify open (if wait needed)
-    // click on first link in list
-    // press Back browser button
-    // wait for screen to reset
-    // click on the hamburger menu on the left-nav popout (again)
-    // repeat process
-    // End
     let popoutBar = browser.page.popOutNav();
 
     popoutBar.navigate()
@@ -63,25 +51,19 @@ module.exports = {
   },
 
   '3. Verify all link images on homepage go to their respective pages ': browser => {
-    // check a link text for URL
-    // click on the link
-    // click the back button, or reset to the homepage
-    // click on the next link in the list of links
-    // repeat the process
-
     let homepage = browser.page.homePage();
 
-    //homepage
-    //  .clickImage1()
-    //  .clickImage2()
-    //  .clickImage3()
-    //  .clickImage4()
-    //  .clickImage5()
-    //  .clickImage6()
-    //  .clickImage7()
-    //  .clickImage8()
-    //  .clickImage9()
-    //  .clickImage10();
+    homepage
+      .clickImage1()
+      .clickImage2()
+      .clickImage3()
+      .clickImage4()
+      .clickImage5()
+      .clickImage6()
+      .clickImage7()
+      .clickImage8()
+      .clickImage9()
+      .clickImage10();
   },
 
   // SKIP FOR NOW - iframe
@@ -107,25 +89,12 @@ module.exports = {
   //     .click('@homepage_Vid3hRef');
   // },
 
-  // '5. Confirm that “Inspire your inbox” sends an email to me': browser => {
+  '5. Confirm that “Inspire your inbox” sends an email to me': browser => {
+    let homepage = browser.page.homePage();
 
-  //   // Verify "email" text inside of box
-  //   // Enter email information (dummy data from a different page object?)
-  //   // click submit
-  //   // manually check email inbox to verify
-  //   let homepage = browser.page.homePage();
-
-  //   homepage
-  //     .sendEmailToMe();
-
-  //   // .navigate()
-  //   // .waitForElementVisible('@homepage_InspireInboxInput')
-  //   // .click('@homepage_InspireInboxInput')
-  //   // .setValue('@homepage_InspireInboxInput', 'testdata@mailinator.com')
-  //   // .waitForElementVisible('@homepage_InspireSubmit')
-  //   // .click('@homepage_InspireSubmit');
-
-  // },
+    homepage
+      .sendEmailToMe();
+  },
 
   // SKIP FOR NOW - iframe
   // '6. Verify that Floating footer links function': browser => {
@@ -142,48 +111,32 @@ module.exports = {
   // },
 
   '7. Verify Terms of Service link': browser => {
-    // Locate Verify Terms of Service on page
-    // Validate Text
-    // Click on link
     let homepage = browser.page.homePage();
 
-    //homepage
-    //  .verifyTOSLink();
+    homepage
+      .verifyTOSLink();
   },
 
   '8. Verify Privacy Notice Link': browser => {
-    // Locate Privacy Notice on page
-    // Validate Text
-    // Click on link
     let homepage = browser.page.homePage();
 
-    //homepage
-    //  .verifyPNLink();
+    homepage
+      .verifyPNLink();
   },
 
   '9. Verify Feedback Page Link': browser => {
-    // Locate Verify Feedback on page
-    // Validate Text
-    // Click on link
     let homepage = browser.page.homePage();
 
-    //homepage
-    //  .verifyFPLink();
+    homepage
+      .verifyFPLink();
 
   },
 
   '10. Verify Cookie Preferences link': browser => {
-    // Locate Privacy Notice on page
-    // Validate Text
-    // Click on linkg
-    // Wait for popup modal
-    // Click (x) in top-right of modal (modal should close)
-    // or 
-    // Click on "Agree and Proceed" button (modal should close)
     let homepage = browser.page.homePage();
 
-    //homepage
-    //  .verifyCPLink();
+    homepage
+      .verifyCPLink();
   },
 
 
@@ -220,62 +173,25 @@ module.exports = {
   // > BOOK OF MORMON - PAGE --------------------------------------------------------------------------<
 
   '13. Verify all links on Book of Mormon page': browser => {
-    // Verify "What is the Book of Mormon?" link
-    // Verify link text
-    // Click link
-    // Back out
+    let bofmpage = browser.page.bofmPage();
 
-    // Verify "Relationship to the Bible" link
-    // Verify link text
-    // Click link
-    // Back out
-
-    // Verify "4 Things to Know" link
-    // Verify link text
-    // Click link
-    // Back out
-
-    // Verify "Who Wrote It" link
-    // Verify link text
-    // Click link
-    // Back out
-
-    // Verify "Jesus in the Book of Mormon" link
-    // Verify link text
-    // Click link
-    // Back out
-
-    // Verify "Real People. Real Stories." link
-    // Verify link text
-    // Click link
-    // Back out
+    bofmpage
+      .bookOfMormonLinks();
   },
+  // SKIP FOR NOW - iframe
+  //'14. Play Video on BofM Page': browser => {
+  // Locate Play button
+  // Select Play
+  // Select Pause
+  // Next Element (what element?) on Page
 
-  '14. Play Video on BofM Page': browser => {
-    // Locate Play button
-    // Select Play
-    // Select Pause
-    // Next Element (what element?) on Page
-
-  },
+  //},
 
   '15. Common Questions Drop Downs': browser => {
-    // Select "Do Mormons believe in the Bible?"
-    // Open Drop Down
-    // Verify some of the Text
-    // Close Drop Down
+    let bofmpage = browser.page.bofmPage()
 
-    // Select “Do Mormons believe in Jesus?”
-    // Open Drop Down
-    // Verify some of the Text
-    // Close Drop Down
-
-    // Select “What are church services like?”
-    // Open Drop Down
-    // Verify some of the Text
-    // Close Drop Down
-
-    // End
+    bofmpage
+      .bookOfMormonDrawers();
   },
 
   // >-------------------------------------------------------------------------------------------<
